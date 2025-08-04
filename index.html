@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureOrbit - Automated Cloud Security Audits</title>
+    <meta name="description" content="Find critical security gaps in your Azure & AWS infrastructure. Automated audits, actionable reports, 30-minute setup.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .typing-animation {
+            overflow: hidden;
+            border-right: 2px solid #667eea;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #667eea }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-white font-bold text-xl">S</span>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        SecureOrbit
+                    </span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services" class="hover:text-blue-400 transition-colors">Services</a>
+                    <a href="#tools" class="hover:text-blue-400 transition-colors">Tools</a>
+                    <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="text-center">
+                <div class="mb-8">
+                    <span class="inline-block px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full text-blue-300 text-sm font-medium mb-4">
+                        🚀 Cloud Security Automation Expert
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Find Critical Security Gaps
+                    <br>
+                    <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent typing-animation">
+                        In Your Cloud Infrastructure
+                    </span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Automated Azure & AWS security audits • Actionable reports • 30-minute setup
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover-lift">
+                        🔍 Get Free Security Assessment
+                    </button>
+                    <button class="border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                        📊 View Sample Report
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500 rounded-full opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-500 rounded-full opacity-10 animate-bounce"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    🏆 <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">AuditCloud360</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Comprehensive automated security audits for your cloud infrastructure
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-700 rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">🔒</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">MFA & Authentication</h3>
+                    <p class="text-gray-300 mb-4">Detect missing multi-factor authentication, weak password policies, and authentication gaps.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>✓ MFA enforcement analysis</li>
+                        <li>✓ Conditional access review</li>
+                        <li>✓ Admin role auditing</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-700 rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">☁️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Cloud Storage Security</h3>
+                    <p class="text-gray-300 mb-4">Identify public buckets, misconfigured permissions, and data exposure risks.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>✓ Public S3/Blob detection</li>
+                        <li>✓ Permission analysis</li>
+                        <li>✓ Encryption validation</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-700 rounded-xl p-8 hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-2xl">📊</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Compliance & Reporting</h3>
+                    <p class="text-gray-300 mb-4">Generate comprehensive security reports with actionable recommendations.</p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>✓ Security score calculation</li>
+                        <li>✓ PDF/HTML reports</li>
+                        <li>✓ Automated notifications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Showcase -->
+    <section id="tools" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">🛠️ Security Arsenal</h2>
+                <p class="text-xl text-gray-300">Comprehensive cybersecurity tools for modern threats</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        🔬 <span class="ml-2">SafeScope</span>
+                    </h3>
+                    <p class="text-gray-300 text-sm">Dynamic malware analysis with Windows Sandbox integration</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        ⚡ <span class="ml-2">SOC Playbooks</span>
+                    </h3>
+                    <p class="text-gray-300 text-sm">Automated incident response with Sentinel & Logic Apps</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        🌐 <span class="ml-2">Network Enumeration</span>
+                    </h3>
+                    <p class="text-gray-300 text-sm">Windows infrastructure share analysis & security assessment</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        🛡️ <span class="ml-2">DefenderHunting</span>
+                    </h3>
+                    <p class="text-gray-300 text-sm">Automated IoC analysis via Microsoft Defender Advanced Hunting</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        🔄 <span class="ml-2">n8n Automation</span>
+                    </h3>
+                    <p class="text-gray-300 text-sm">Custom workflow orchestration for security operations</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        📈 <span class="ml-2">Custom Scripts</span>
+                    </h3>
+                    <p class="text-gray-300 text-sm">PowerShell & Python automation for specialized security tasks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">About SecureOrbit</h2>
+                    <p class="text-xl text-gray-300 mb-6">
+                        Cloud security automation expert specializing in Azure, AWS, and Microsoft 365 environments. 
+                        Located in Canada, delivering enterprise-grade security solutions to organizations worldwide.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-blue-500 rounded-full mr-4"></div>
+                            <span>SOC Operations & Incident Response Automation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-purple-500 rounded-full mr-4"></div>
+                            <span>Cloud Security Architecture & Compliance</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-green-500 rounded-full mr-4"></div>
+                            <span>Malware Analysis & Threat Hunting</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-yellow-500 rounded-full mr-4"></div>
+                            <span>Security Orchestration & Workflow Automation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-center">
+                    <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">🚀</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Ready to Secure Your Cloud?</h3>
+                    <p class="text-blue-100 mb-6">Get started with a free security assessment of your Azure or AWS environment.</p>
+                    <button class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
+                        Schedule Assessment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
+            <p class="text-xl text-gray-300 mb-12">
+                Ready to strengthen your cloud security posture? Let's discuss your needs.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <span class="text-xl">📧</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Email</h3>
+                    <a href="mailto:contact@secureorbit.cloud" class="text-blue-400 hover:text-blue-300">
+                        contact@secureorbit.cloud
+                    </a>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <span class="text-xl">💼</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">LinkedIn</h3>
+                    <a href="#" class="text-blue-400 hover:text-blue-300">
+                        Connect with me
+                    </a>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <span class="text-xl">🐙</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">GitHub</h3>
+                    <a href="https://github.com/wislest" class="text-blue-400 hover:text-blue-300">
+                        View Projects
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold mb-4">Free Security Assessment</h3>
+                <p class="text-blue-100 mb-6">
+                    Get a comprehensive security audit of your cloud infrastructure. No commitment required.
+                </p>
+                <button class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
+                    Request Free Audit
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-white font-bold">S</span>
+                    </div>
+                    <span class="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        SecureOrbit
+                    </span>
+                </div>
+                <div class="flex space-x-6 text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">© 2025 SecureOrbit</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-gray-900', 'bg-opacity-95');
+            } else {
+                nav.classList.remove('bg-gray-900', 'bg-opacity-95');
+            }
+        });
+    </script>
+</body>
+</html>
