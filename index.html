@@ -149,7 +149,7 @@
                     <div class="grid lg:grid-cols-[minmax(0,1fr),320px] gap-8 items-start">
                         <div>
                             <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl lg:max-w-2xl mx-auto lg:mx-0">
-                                Missed renewals and unexpected SSL/TLS failures can take down websites, trigger customer-facing errors, and create avoidable fire drills. CertWatch helps you stay ahead with continuous monitoring, CT-based discovery, intelligent alerts, and monthly reports, all operated as a managed service by SecureOrbit.
+                                Missed renewals and unexpected SSL/TLS failures can take down websites, trigger customer-facing errors, and create avoidable fire drills. CertWatch is SecureOrbit's managed certificate monitoring service: you send us your domains, we handle the monitoring, and your team receives alerts, monthly reports, and recommended actions before issues become outages.
                             </p>
 
                             <p class="text-base md:text-lg text-yellow-200 mb-8 max-w-3xl lg:max-w-2xl mx-auto lg:mx-0">
@@ -157,10 +157,10 @@
                             </p>
 
                             <div class="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 text-sm text-blue-100">
+                                <span class="px-4 py-2 rounded-full bg-white/10 border border-white/10">Managed by SecureOrbit</span>
                                 <span class="px-4 py-2 rounded-full bg-white/10 border border-white/10">Continuous monitoring</span>
-                                <span class="px-4 py-2 rounded-full bg-white/10 border border-white/10">CT-based discovery</span>
-                                <span class="px-4 py-2 rounded-full bg-white/10 border border-white/10">Intelligent alerts</span>
-                                <span class="px-4 py-2 rounded-full bg-white/10 border border-white/10">Monthly reports</span>
+                                <span class="px-4 py-2 rounded-full bg-white/10 border border-white/10">No console to manage</span>
+                                <span class="px-4 py-2 rounded-full bg-white/10 border border-white/10">Monthly PDF reports</span>
                             </div>
 
                             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
@@ -177,7 +177,7 @@
                             <div class="flex items-center justify-between mb-4">
                                 <div>
                                     <p class="text-sm uppercase tracking-[0.3em] text-blue-200">Managed by SecureOrbit</p>
-                                    <h2 class="text-2xl md:text-3xl font-bold mt-2">Outcomes you get</h2>
+                                    <h2 class="text-2xl md:text-3xl font-bold mt-2">How we help</h2>
                                 </div>
                                 <div class="w-12 h-12 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-xl">
                                     🔐
@@ -186,8 +186,8 @@
 
                             <ul class="space-y-4 text-left">
                                 <li class="rounded-2xl bg-black/20 border border-white/10 p-4 text-gray-100">Catch expiring certificates before customers see browser warnings or outages.</li>
-                                <li class="rounded-2xl bg-black/20 border border-white/10 p-4 text-gray-100">Discover unknown certificates tied to your domains through CT-based monitoring.</li>
-                                <li class="rounded-2xl bg-black/20 border border-white/10 p-4 text-gray-100">Get intelligent alerts, monthly reports, and recommended actions from SecureOrbit.</li>
+                                <li class="rounded-2xl bg-black/20 border border-white/10 p-4 text-gray-100">See unknown or shadow domains tied to your organization through certificate transparency monitoring.</li>
+                                <li class="rounded-2xl bg-black/20 border border-white/10 p-4 text-gray-100">Receive alerts, monthly reports, and recommendations from SecureOrbit without another tool for your team to manage.</li>
                             </ul>
                         </div>
                     </div>
@@ -200,40 +200,189 @@
     </section>
 
     <!-- CertWatch Overview -->
-    <section id="certwatch" class="py-20 bg-gray-900">
+    <section id="certwatch" class="py-20 bg-gray-900 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">
-                    <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">CertWatch</span> helps you prevent certificate outages before they spread
+            <div class="text-center mb-12">
+                <p class="text-sm uppercase tracking-[0.3em] text-blue-300 mb-4">Primary Offer</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-5">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">CertWatch</span> makes certificate monitoring feel concrete
                 </h2>
                 <p class="text-xl text-gray-300 max-w-4xl mx-auto">
-                    SecureOrbit monitors SSL/TLS certificates as a managed service. Your team gets alerted before expirations, sees new certificate activity through CT-based discovery, and receives a monthly report with recommendations.
+                    CertWatch is a managed SSL/TLS monitoring service operated by SecureOrbit. We watch your domains continuously, alert you before problems become customer-facing, and deliver a monthly report with clear recommendations so your team can act quickly.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
-                    <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-5 text-2xl">⏱️</div>
-                    <h3 class="text-xl font-bold mb-3">Continuous Monitoring</h3>
-                    <p class="text-gray-300">Watch expiry windows, SAN changes, issuer updates, and other certificate signals without relying on manual spreadsheets.</p>
+            <div class="flex flex-wrap justify-center gap-3 mb-10 text-sm">
+                <a href="#certwatch-what-it-is" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-blue-100 hover:border-blue-400/40 hover:text-white transition-colors">What it is</a>
+                <a href="#certwatch-monitoring" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-blue-100 hover:border-blue-400/40 hover:text-white transition-colors">What we monitor</a>
+                <a href="#certwatch-how" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-blue-100 hover:border-blue-400/40 hover:text-white transition-colors">How it works</a>
+                <a href="#certwatch-deliverables" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-blue-100 hover:border-blue-400/40 hover:text-white transition-colors">What clients receive</a>
+                <a href="#certwatch-fit" class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-blue-100 hover:border-blue-400/40 hover:text-white transition-colors">Who it's for</a>
+            </div>
+
+            <div id="certwatch-what-it-is" class="grid lg:grid-cols-[minmax(0,1.15fr),360px] gap-8 mb-8">
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10 shadow-2xl">
+                    <p class="text-sm uppercase tracking-[0.25em] text-blue-300 mb-4">Section 1</p>
+                    <h3 class="text-3xl font-bold mb-5">What CertWatch is</h3>
+                    <div class="space-y-4 text-lg text-gray-300">
+                        <p>CertWatch helps you avoid being surprised by certificate expirations, unexpected changes, and hidden risks tied to your domains.</p>
+                        <p>You send SecureOrbit your domains, we start continuous monitoring, and your team receives alerts, monthly PDF reports, and practical recommendations before issues become outages.</p>
+                        <p>There is no console for your team to manage. SecureOrbit operates the service internally for you.</p>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
-                    <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-5 text-2xl">🌐</div>
-                    <h3 class="text-xl font-bold mb-3">CT-Based Discovery</h3>
-                    <p class="text-gray-300">Discover new or forgotten certificates connected to your organization by monitoring certificate transparency logs.</p>
+                <aside class="glass-effect rounded-3xl p-8">
+                    <p class="text-sm uppercase tracking-[0.25em] text-blue-200 mb-4">Managed by SecureOrbit</p>
+                    <h3 class="text-2xl font-bold mb-6">What your team experiences</h3>
+                    <div class="space-y-4 text-gray-100">
+                        <div class="rounded-2xl bg-black/20 border border-white/10 p-4">
+                            We run the monitoring behind the scenes and keep watch on your certificate estate.
+                        </div>
+                        <div class="rounded-2xl bg-black/20 border border-white/10 p-4">
+                            You get timely alerts before renewal gaps, certificate changes, or unknown domains become a problem.
+                        </div>
+                        <div class="rounded-2xl bg-black/20 border border-white/10 p-4">
+                            You receive a monthly report with recommendations your team can review and act on quickly.
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div id="certwatch-monitoring" class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10">
+                    <p class="text-sm uppercase tracking-[0.25em] text-purple-300 mb-4">Section 2</p>
+                    <h3 class="text-3xl font-bold mb-6">What we monitor</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mr-4 text-lg shrink-0">⏱️</div>
+                            <span class="pt-2">SSL/TLS expiration windows so renewals do not get missed.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mr-4 text-lg shrink-0">🔄</div>
+                            <span class="pt-2">Certificate changes such as SAN updates or issuer changes.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center mr-4 text-lg shrink-0">🌐</div>
+                            <span class="pt-2">Certificate transparency discoveries that can reveal unknown or shadow domains.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center mr-4 text-lg shrink-0">🛡️</div>
+                            <span class="pt-2">TLS configuration issues when they are detected as part of monitoring.</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
-                    <div class="w-14 h-14 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-5 text-2xl">🚨</div>
-                    <h3 class="text-xl font-bold mb-3">Intelligent Alerts</h3>
-                    <p class="text-gray-300">Receive prioritized notifications and human follow-up from SecureOrbit when renewal timelines or SSL/TLS issues need attention.</p>
+                <div id="certwatch-how" class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10">
+                    <p class="text-sm uppercase tracking-[0.25em] text-yellow-300 mb-4">Section 3</p>
+                    <h3 class="text-3xl font-bold mb-6">How it works</h3>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                            <div class="text-sm text-blue-300 font-semibold mb-2">Step 1</div>
+                            <p class="text-lg font-semibold mb-2">You send us your domains</p>
+                            <p class="text-sm text-gray-400">Share the domains, environments, or business units you want covered.</p>
+                        </div>
+                        <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                            <div class="text-sm text-blue-300 font-semibold mb-2">Step 2</div>
+                            <p class="text-lg font-semibold mb-2">We start continuous monitoring</p>
+                            <p class="text-sm text-gray-400">SecureOrbit operates the monitoring internally and keeps watch in the background.</p>
+                        </div>
+                        <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                            <div class="text-sm text-blue-300 font-semibold mb-2">Step 3</div>
+                            <p class="text-lg font-semibold mb-2">You receive alerts before issues happen</p>
+                            <p class="text-sm text-gray-400">Your team hears from us before expiration windows, risky changes, or new discoveries create pressure.</p>
+                        </div>
+                        <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                            <div class="text-sm text-blue-300 font-semibold mb-2">Step 4</div>
+                            <p class="text-lg font-semibold mb-2">You get a monthly report with recommendations</p>
+                            <p class="text-sm text-gray-400">We summarize the current picture in a clear PDF report with next steps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-[minmax(0,1fr),380px] gap-8 mb-8">
+                <div id="certwatch-deliverables" class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10">
+                    <p class="text-sm uppercase tracking-[0.25em] text-green-300 mb-4">Section 4</p>
+                    <h3 class="text-3xl font-bold mb-6">What clients receive</h3>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                            <h4 class="text-xl font-semibold mb-3">Early warnings</h4>
+                            <p class="text-gray-400">Know about expiring certificates before they disrupt customers, transactions, or launches.</p>
+                        </div>
+                        <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                            <h4 class="text-xl font-semibold mb-3">Visibility on unknown domains</h4>
+                            <p class="text-gray-400">Spot domains and certificates your team may not realize are tied to the business.</p>
+                        </div>
+                        <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                            <h4 class="text-xl font-semibold mb-3">A clear monthly PDF report</h4>
+                            <p class="text-gray-400">Review certificate health, recent findings, and upcoming priorities in a concise format.</p>
+                        </div>
+                        <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                            <h4 class="text-xl font-semibold mb-3">Actionable recommendations</h4>
+                            <p class="text-gray-400">Get practical next steps from SecureOrbit, not just alerts without context.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
-                    <div class="w-14 h-14 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center mb-5 text-2xl">📄</div>
-                    <h3 class="text-xl font-bold mb-3">Monthly Reports</h3>
-                    <p class="text-gray-300">Shareable summaries highlight certificate status, recent findings, upcoming renewals, and practical recommendations.</p>
+                <div id="sample-report" class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10 shadow-2xl">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <p class="text-sm text-blue-300 uppercase tracking-[0.25em]">Sample Monthly Report</p>
+                            <h3 class="text-2xl font-bold mt-2">Certificate Health Summary</h3>
+                        </div>
+                        <div class="text-3xl">📘</div>
+                    </div>
+
+                    <p class="text-gray-300 mb-6">
+                        Clients receive a decision-ready PDF, plus urgent alerts when something needs attention sooner.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="rounded-2xl bg-gray-900/70 p-4 border border-red-400/20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold">Expiring Soon</span>
+                                <span class="text-red-300 text-sm">2 certificates</span>
+                            </div>
+                            <p class="text-sm text-gray-400">Renewal actions recommended within the next 14 days.</p>
+                        </div>
+                        <div class="rounded-2xl bg-gray-900/70 p-4 border border-blue-400/20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold">New CT Findings</span>
+                                <span class="text-blue-300 text-sm">3 discoveries</span>
+                            </div>
+                            <p class="text-sm text-gray-400">Recently issued certificates tied to monitored domains.</p>
+                        </div>
+                        <div class="rounded-2xl bg-gray-900/70 p-4 border border-purple-400/20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold">Recommended Actions</span>
+                                <span class="text-purple-300 text-sm">4 items</span>
+                            </div>
+                            <p class="text-sm text-gray-400">Owner follow-ups, renewal sequencing, and inventory cleanup notes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="certwatch-fit" class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10">
+                <p class="text-sm uppercase tracking-[0.25em] text-pink-300 mb-4">Section 5</p>
+                <h3 class="text-3xl font-bold mb-6">Who it's for</h3>
+                <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <h4 class="text-lg font-semibold mb-2">SaaS companies</h4>
+                        <p class="text-sm text-gray-400">Teams that cannot afford customer-facing outages or trust warnings.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <h4 class="text-lg font-semibold mb-2">Agencies with many domains</h4>
+                        <p class="text-sm text-gray-400">Organizations managing certificate coverage across multiple clients or brands.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <h4 class="text-lg font-semibold mb-2">Lean IT or security teams</h4>
+                        <p class="text-sm text-gray-400">Internal teams that need dependable monitoring without owning another platform.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <h4 class="text-lg font-semibold mb-2">Companies with many certificates</h4>
+                        <p class="text-sm text-gray-400">Businesses with growing certificate inventory, renewals, and domain complexity.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -290,72 +439,6 @@
                         <li>✓ Security workflow automation</li>
                         <li>✓ Guided next-step recommendations</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sample Report -->
-    <section id="sample-report" class="py-20 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-10 items-center">
-                <div>
-                    <h2 class="text-4xl font-bold mb-4">What a CertWatch report looks like</h2>
-                    <p class="text-xl text-gray-300 mb-8">
-                        Clients receive a concise monthly report, plus urgent alerts when expirations or SSL/TLS issues need action. The report is designed for decision-makers and operators alike.
-                    </p>
-                    <div class="space-y-4 text-gray-300">
-                        <div class="flex items-start">
-                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-4 mt-2"></div>
-                            <span>Upcoming expirations and certificates already inside risk windows</span>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-3 h-3 bg-purple-500 rounded-full mr-4 mt-2"></div>
-                            <span>Newly discovered domains and certificates surfaced through CT monitoring</span>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-4 mt-2"></div>
-                            <span>Severity-ranked alerts with context on why the issue matters</span>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-3 h-3 bg-green-500 rounded-full mr-4 mt-2"></div>
-                            <span>Clear recommendations from SecureOrbit on renewals, inventory cleanup, and follow-up</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10 shadow-2xl">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <p class="text-sm text-blue-300 uppercase tracking-[0.25em]">Sample Monthly Report</p>
-                            <h3 class="text-2xl font-bold mt-2">Certificate Health Summary</h3>
-                        </div>
-                        <div class="text-3xl">📘</div>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div class="rounded-2xl bg-gray-900/70 p-4 border border-red-400/20">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="font-semibold">Expiring Soon</span>
-                                <span class="text-red-300 text-sm">2 certificates</span>
-                            </div>
-                            <p class="text-sm text-gray-400">Renewal actions recommended within the next 14 days.</p>
-                        </div>
-                        <div class="rounded-2xl bg-gray-900/70 p-4 border border-blue-400/20">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="font-semibold">New CT Findings</span>
-                                <span class="text-blue-300 text-sm">3 discoveries</span>
-                            </div>
-                            <p class="text-sm text-gray-400">Recently issued certificates tied to monitored domains.</p>
-                        </div>
-                        <div class="rounded-2xl bg-gray-900/70 p-4 border border-purple-400/20">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="font-semibold">Recommended Actions</span>
-                                <span class="text-purple-300 text-sm">4 items</span>
-                            </div>
-                            <p class="text-sm text-gray-400">Owner follow-ups, renewal sequencing, and inventory cleanup notes.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -501,7 +584,7 @@
             <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8">
                 <h3 class="text-2xl font-bold mb-4">Free Certificate Scan</h3>
                 <p class="text-blue-100 mb-6">
-                    Get a sample view of certificate coverage, upcoming expirations, and CT-discovered assets. No self-service signup required.
+                    Get a sample view of certificate coverage, upcoming expirations, and CT-discovered assets without adding another tool for your team to operate.
                 </p>
                 <a href="mailto:contact@secureorbit.cloud?subject=Free%20Certificate%20Scan%20Request" class="inline-block bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
                     Get a Free Certificate Scan
