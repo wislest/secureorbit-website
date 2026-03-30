@@ -10,17 +10,33 @@
   <script src="https://cdn.tailwindcss.com/3.4.10"></script>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests;">
 </head>
-<body class="bg-gray-900 text-white">
-  <main class="max-w-3xl mx-auto px-6 py-12">
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+  <main class="max-w-3xl mx-auto px-6 py-12 flex-1 w-full">
     <h1 class="text-3xl font-bold mb-6">Terms of Service</h1>
-    <p class="text-gray-300 mb-4">Effective date: 2025-01-01</p>
+    <p class="text-gray-300 mb-4">Effective date: 2026-03-29</p>
     <p class="text-gray-300">Use of this website constitutes acceptance of these terms. The content is provided "as is" without warranties. Services are subject to separate agreements.</p>
     <h2 class="text-2xl font-semibold mt-8 mb-4">Use</h2>
     <p class="text-gray-300">Do not use the site for unlawful purposes or to disrupt service. Intellectual property remains the property of SecureOrbit.</p>
     <h2 class="text-2xl font-semibold mt-8 mb-4">Contact</h2>
     <p class="text-gray-300">Questions about these terms: <a class="text-blue-400" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>
   </main>
+  <footer class="bg-black py-8">
+    <div class="max-w-3xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400">
+      <div class="flex items-center">
+        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+          <span class="text-white font-bold">S</span>
+        </div>
+        <span class="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          SecureOrbit
+        </span>
+      </div>
+      <div class="flex space-x-6">
+        <a href="/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="/terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+        <span class="hover:text-white transition-colors">© 2026 SecureOrbit - All rights reserved</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
-
 
