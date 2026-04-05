@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Free Certificate Scan - SecureOrbit</title>
+    <meta name="description" content="Request a free certificate scan from SecureOrbit CertWatch.">
+    <meta name="theme-color" content="#0b1220">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto: https:; frame-ancestors 'none'; upgrade-insecure-requests;">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <script src="https://cdn.tailwindcss.com/3.4.10"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .glass-effect { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <nav class="sticky top-0 z-50 glass-effect">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <a href="/index.html#certwatch" class="flex items-center">
+                <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-xl">S</span></div>
+                <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">SecureOrbit</span>
+            </a>
+            <a href="/index.html#certwatch" class="text-blue-200 hover:text-white transition-colors">Back to CertWatch</a>
+        </div>
+    </nav>
+    <main class="gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-25"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center mb-10">
+                <p class="text-sm uppercase tracking-[0.3em] text-blue-200 mb-4">Free Certificate Scan</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Request a free certificate scan</h1>
+                <p class="text-lg text-blue-100 max-w-3xl mx-auto">Share the domains you want reviewed and SecureOrbit will take a first pass before recommending the next step.</p>
+                <p class="text-sm text-blue-100/80 mt-4">You're requesting a managed CertWatch engagement.</p>
+            </div>
+            <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-8">
+                <section class="bg-gray-900/80 border border-white/10 rounded-3xl p-8 shadow-2xl">
+                    <form id="scan-request-form" class="space-y-5">
+                        <input id="request_type" name="request_type" type="hidden" value="free_scan">
+                        <div><label for="full_name" class="block text-sm font-medium text-blue-100 mb-2">Full name</label><input id="full_name" name="full_name" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Alex Morgan"></div>
+                        <div><label for="work_email" class="block text-sm font-medium text-blue-100 mb-2">Work email</label><input id="work_email" name="work_email" type="email" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="alex@company.com"></div>
+                        <div><label for="company" class="block text-sm font-medium text-blue-100 mb-2">Company</label><input id="company" name="company" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Example Inc."></div>
+                        <div><label for="domains_to_review" class="block text-sm font-medium text-blue-100 mb-2">Domains to review</label><textarea id="domains_to_review" name="domains_to_review" rows="4" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="example.com, api.example.com, login.example.org"></textarea></div>
+                        <div><label for="notes" class="block text-sm font-medium text-blue-100 mb-2">Optional notes</label><textarea id="notes" name="notes" rows="4" class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Anything helpful about scope, renewals, or business context."></textarea></div>
+                        <div class="rounded-2xl bg-blue-500/10 border border-blue-300/20 p-4 text-sm text-blue-100">SecureOrbit handles onboarding directly and will recommend the right coverage.</div>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button id="scan-submit" type="submit" class="inline-flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300">Get a Free Certificate Scan</button>
+                            <a href="/request.html?plan=portfolio" class="inline-flex justify-center items-center border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors">Request pricing instead</a>
+                        </div>
+                        <p class="text-sm text-gray-300">Your request will be sent directly to SecureOrbit for review.</p>
+                        <p class="text-xs text-gray-400">We only use this information to review your CertWatch request and follow up with you.</p>
+                    </form>
+                    <div id="scan-confirmation" class="hidden mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-500/10 p-4 text-sm text-emerald-100">
+                        <p class="font-semibold">Your request is ready to send directly to SecureOrbit.</p>
+                        <p class="mt-1">SecureOrbit will review your request and follow up directly.</p>
+                    </div>
+                </section>
+                <aside class="space-y-6">
+                    <div class="bg-gray-900/70 border border-white/10 rounded-3xl p-6">
+                        <p class="text-sm uppercase tracking-[0.25em] text-cyan-300 mb-3">What you send us</p>
+                        <ul class="space-y-3 text-gray-200">
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Your contact details, company, and the domains you want reviewed.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Optional notes that help SecureOrbit understand scope or renewal concerns.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-900/70 border border-white/10 rounded-3xl p-6">
+                        <p class="text-sm uppercase tracking-[0.25em] text-purple-300 mb-3">What happens next</p>
+                        <ul class="space-y-3 text-gray-200 mb-4">
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">SecureOrbit reviews the domains you shared and checks the monitoring fit.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">You receive a direct follow-up with the recommended next step.</li>
+                        </ul>
+                        <a id="scan-sample-link" href="/index.html#sample-report" class="inline-flex justify-center items-center w-full border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors">View Sample Report</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    <script src="/certwatch-funnel.js"></script>
+    <script>
+        (function () {
+            var form = document.getElementById("scan-request-form");
+            var confirmation = document.getElementById("scan-confirmation");
+            var sampleLink = document.getElementById("scan-sample-link");
+            var config = window.certWatchFunnelConfig;
+            var funnel = window.certWatchFunnel;
+            sampleLink.setAttribute("href", funnel.getSampleReportHref());
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                if (!form.reportValidity()) return;
+                var formData = new FormData(form);
+                var payload = {
+                    request_type: "free_scan",
+                    full_name: formData.get("full_name"),
+                    work_email: formData.get("work_email"),
+                    company: formData.get("company"),
+                    domains_to_review: formData.get("domains_to_review"),
+                    notes: formData.get("notes")
+                };
+                confirmation.classList.remove("hidden");
+                if (config.CERTWATCH_SCAN_FORM_URL) {
+                    form.action = config.CERTWATCH_SCAN_FORM_URL;
+                    form.method = "GET";
+                    form.target = "_blank";
+                    setTimeout(function () { form.submit(); }, 150);
+                    return;
+                }
+                window.location.href = funnel.buildScanMailto(payload);
+            });
+        })();
+    </script>
+</body>
+</html>

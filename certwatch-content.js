@@ -12,7 +12,7 @@ window.certWatchContent = {
                 "Monthly report"
             ],
             ctaLabel: "Request pricing",
-            ctaHref: "mailto:contact@secureorbit.cloud?subject=Request%20Pricing%20-%20CertWatch%20Starter%20Monitoring",
+            ctaHref: window.certWatchFunnel.getPricingHref("starter"),
             ctaStyle: "primary",
             highlight: false
         },
@@ -28,7 +28,7 @@ window.certWatchContent = {
                 "Priority alerts"
             ],
             ctaLabel: "Request pricing",
-            ctaHref: "mailto:contact@secureorbit.cloud?subject=Request%20Pricing%20-%20CertWatch%20Portfolio%20Monitoring",
+            ctaHref: window.certWatchFunnel.getPricingHref("portfolio"),
             ctaStyle: "primary",
             highlight: true
         },
@@ -43,8 +43,8 @@ window.certWatchContent = {
                 "Custom reporting",
                 "Direct support"
             ],
-            ctaLabel: "Book a call",
-            ctaHref: "mailto:contact@secureorbit.cloud?subject=Book%20a%20Call%20-%20CertWatch%20Managed%20Custom",
+            ctaLabel: window.certWatchFunnel.getCallLabel(),
+            ctaHref: window.certWatchFunnel.getCallHref(),
             ctaStyle: "light",
             highlight: false
         }
@@ -73,13 +73,19 @@ window.certWatchContent = {
         }
     ],
     ctaLinks: {
-        "hero-primary-cta": "mailto:contact@secureorbit.cloud?subject=Request%20Pricing%20-%20CertWatch",
-        "hero-secondary-cta": "mailto:contact@secureorbit.cloud?subject=Request%20a%20Sample%20Report%20-%20CertWatch",
-        "about-primary-cta": "mailto:contact@secureorbit.cloud?subject=Request%20Pricing%20-%20CertWatch",
-        "about-secondary-cta": "mailto:contact@secureorbit.cloud?subject=Request%20a%20Sample%20Report%20-%20CertWatch",
-        "contact-primary-cta": "mailto:contact@secureorbit.cloud?subject=Request%20Pricing%20-%20CertWatch",
-        "contact-secondary-cta": "mailto:contact@secureorbit.cloud?subject=Request%20a%20Sample%20Report%20-%20CertWatch",
-        "contact-tertiary-cta": "mailto:contact@secureorbit.cloud?subject=Book%20a%20Call%20-%20CertWatch",
-        "contact-schedule-link": "mailto:contact@secureorbit.cloud?subject=Book%20a%20Call%20-%20CertWatch"
+        "hero-primary-cta": window.certWatchFunnel.getScanHref(),
+        "hero-secondary-cta": window.certWatchFunnel.getSampleReportHref(),
+        "about-primary-cta": window.certWatchFunnel.getPricingHref(),
+        "about-secondary-cta": window.certWatchFunnel.getSampleReportHref(),
+        "contact-primary-cta": window.certWatchFunnel.getPricingHref(),
+        "contact-secondary-cta": window.certWatchFunnel.getSampleReportHref(),
+        "contact-tertiary-cta": window.certWatchFunnel.getCallHref(),
+        "contact-schedule-link": window.certWatchFunnel.getCallHref(),
+        "pricing-custom-cta": window.certWatchFunnel.getCallHref()
+    },
+    ctaText: {
+        "contact-schedule-link": window.certWatchFunnel.getCallLabel(),
+        "contact-tertiary-cta": window.certWatchFunnel.getCallLabel(),
+        "pricing-custom-cta": window.certWatchFunnel.getCallLabel()
     }
 };

@@ -21,7 +21,7 @@
     <meta name="twitter:description" content="Managed SSL/TLS certificate monitoring with CT-based discovery, intelligent alerts, and monthly reports from SecureOrbit.">
 
     <!-- Security: Content Security Policy (limited via meta) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto: https:; frame-ancestors 'none'; upgrade-insecure-requests;">
     
     <!-- Performance hints for CDN -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
@@ -169,11 +169,11 @@
                             </div>
 
                             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                                <a id="hero-primary-cta" href="#contact" class="w-full sm:w-auto text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover-lift">
-                                    Request pricing
+                                <a id="hero-primary-cta" href="/scan.html?request_type=free_scan" class="w-full sm:w-auto text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover-lift">
+                                    Get a Free Certificate Scan
                                 </a>
                                 <a id="hero-secondary-cta" href="#sample-report" class="w-full sm:w-auto text-center px-6 py-3 rounded-lg font-medium text-base text-blue-100/85 hover:text-white border border-white/15 hover:border-white/30 transition-all duration-300">
-                                    Request a sample report
+                                    View Sample Report
                                 </a>
                             </div>
                         </div>
@@ -374,7 +374,7 @@
                             <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Alerts</li>
                             <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Monthly report</li>
                         </ul>
-                        <a href="mailto:contact@secureorbit.cloud?subject=Request%20Pricing%20-%20CertWatch%20Starter%20Monitoring" class="inline-block text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover-lift">
+                        <a href="/request.html?plan=starter" class="inline-block text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover-lift">
                             Request pricing
                         </a>
                     </article>
@@ -394,7 +394,7 @@
                             <li class="rounded-2xl bg-black/20 border border-white/10 p-4">CT-based discovery</li>
                             <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Priority alerts</li>
                         </ul>
-                        <a href="mailto:contact@secureorbit.cloud?subject=Request%20Pricing%20-%20CertWatch%20Portfolio%20Monitoring" class="inline-block text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover-lift">
+                        <a href="/request.html?plan=portfolio" class="inline-block text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover-lift">
                             Request pricing
                         </a>
                     </article>
@@ -411,12 +411,13 @@
                             <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Custom reporting</li>
                             <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Direct support</li>
                         </ul>
-                        <a href="mailto:contact@secureorbit.cloud?subject=Book%20a%20Call%20-%20CertWatch%20Managed%20Custom" class="inline-block text-center bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
+                        <a id="pricing-custom-cta" href="mailto:contact@secureorbit.cloud?subject=Book%20a%20Call%20-%20CertWatch" class="inline-block text-center bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
                             Book a call
                         </a>
                     </article>
                 </div>
                 <p id="certwatch-pricing-note" class="text-center text-sm text-gray-400">Final pricing depends on domain count and monitoring scope.</p>
+                <p class="text-center text-sm text-blue-100 mt-3">We'll review your request and reply with the right monitoring scope.</p>
                 <p class="text-center text-base text-blue-100 mt-3">One certificate outage can cost more than a full year of monitoring.</p>
             </div>
 
@@ -691,11 +692,11 @@
                     <h3 class="text-2xl font-bold mb-4">Need managed certificate monitoring?</h3>
                     <p class="text-blue-100 mb-6">Review pricing, see a sample report, and talk through the monitoring scope that fits your domain portfolio.</p>
                     <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                        <a id="about-primary-cta" href="#contact" class="inline-block bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
+                        <a id="about-primary-cta" href="/request.html" class="inline-block bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
                             Request pricing
                         </a>
                         <a id="about-secondary-cta" href="#sample-report" class="inline-block border border-white/30 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors">
-                            Request a sample report
+                            View Sample Report
                         </a>
                     </div>
                 </div>
@@ -728,7 +729,7 @@
                     </div>
                     <h3 class="font-semibold mb-2">Schedule</h3>
                     <a id="contact-schedule-link" href="mailto:contact@secureorbit.cloud?subject=Book%20a%20Call%20-%20CertWatch" class="text-blue-400 hover:text-blue-300">
-                        Book a certificate call
+                        Book a call
                     </a>
                 </div>
                 
@@ -749,11 +750,11 @@
                     Choose the next step that matches where your team is today: pricing, a sample report, or a quick scoping call.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a id="contact-primary-cta" href="mailto:contact@secureorbit.cloud?subject=Request%20Pricing%20-%20CertWatch" class="inline-block bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
+                    <a id="contact-primary-cta" href="/request.html" class="inline-block bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
                         Request pricing
                     </a>
-                    <a id="contact-secondary-cta" href="mailto:contact@secureorbit.cloud?subject=Request%20a%20Sample%20Report%20-%20CertWatch" class="inline-block border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
-                        Request a sample report
+                    <a id="contact-secondary-cta" href="#sample-report" class="inline-block border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
+                        View Sample Report
                     </a>
                     <a id="contact-tertiary-cta" href="mailto:contact@secureorbit.cloud?subject=Book%20a%20Call%20-%20CertWatch" class="inline-block border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
                         Book a call
@@ -784,6 +785,7 @@
         </div>
     </footer>
 
+    <script src="/certwatch-funnel.js"></script>
     <script src="/certwatch-content.js"></script>
 
     <!-- JavaScript for smooth scrolling, optional CTA overrides, and mobile menu -->
@@ -798,6 +800,15 @@
                 const href = linkBindings[id];
                 if (element && href) {
                     element.setAttribute('href', href);
+                }
+            });
+
+            const textBindings = content.ctaText || {};
+            Object.keys(textBindings).forEach(function (id) {
+                const element = document.getElementById(id);
+                const text = textBindings[id];
+                if (element && text) {
+                    element.textContent = text;
                 }
             });
         })();
