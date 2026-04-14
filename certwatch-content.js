@@ -11,7 +11,7 @@ window.certWatchContent = {
                 "Alerts",
                 "Monthly report"
             ],
-            ctaLabel: "Request pricing",
+            ctaLabel: "Get exact pricing",
             ctaHref: window.certWatchFunnel.getPricingHref("starter"),
             ctaStyle: "primary",
             highlight: false
@@ -27,7 +27,7 @@ window.certWatchContent = {
                 "CT-based discovery",
                 "Priority alerts"
             ],
-            ctaLabel: "Request pricing",
+            ctaLabel: "Get exact pricing",
             ctaHref: window.certWatchFunnel.getPricingHref("portfolio"),
             ctaStyle: "primary",
             highlight: true

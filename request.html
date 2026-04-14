@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request CertWatch Pricing - SecureOrbit</title>
-    <meta name="description" content="Request pricing for SecureOrbit CertWatch managed certificate monitoring.">
+    <title>Get Exact CertWatch Pricing - SecureOrbit</title>
+    <meta name="description" content="Get exact pricing for SecureOrbit CertWatch managed certificate monitoring.">
     <meta name="theme-color" content="#0b1220">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="alternate icon" href="/favicon.ico">
@@ -32,45 +32,58 @@
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="text-center mb-10">
                 <p class="text-sm uppercase tracking-[0.3em] text-blue-200 mb-4">CertWatch Pricing Request</p>
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Request pricing for managed certificate monitoring</h1>
-                <p class="text-lg text-blue-100 max-w-3xl mx-auto">Tell us a bit about your scope and SecureOrbit will recommend the right monitoring coverage for your domains.</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Get exact pricing for managed certificate monitoring</h1>
+                <p class="text-lg text-blue-100 max-w-3xl mx-auto">Share your scope and SecureOrbit will confirm the right monitoring approach and exact pricing for your environment.</p>
                 <p class="text-sm text-blue-100/80 mt-4">You're requesting a managed CertWatch engagement.</p>
             </div>
             <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-8">
                 <section class="bg-gray-900/80 border border-white/10 rounded-3xl p-8 shadow-2xl">
-                    <form id="pricing-request-form" class="space-y-5">
+                    <form id="pricing-request-form" class="space-y-5" action="https://formsubmit.co/contact@secureorbit.cloud" method="POST" accept-charset="UTF-8" target="pricing-submit-target">
+                        <input type="hidden" name="_subject" value="">
+                        <input type="hidden" name="_next" value="">
+                        <input type="hidden" name="_autoresponse" value="">
+                        <input type="hidden" name="_replyto" value="">
+                        <input type="hidden" name="_cc" value="">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="true">
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+                        <input type="hidden" name="request_type" value="pricing">
+                        <input type="hidden" name="internal_summary" value="">
+                        <input type="hidden" name="submission_source" value="">
                         <div><label for="full_name" class="block text-sm font-medium text-blue-100 mb-2">Full name</label><input id="full_name" name="full_name" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Alex Morgan"></div>
-                        <div><label for="work_email" class="block text-sm font-medium text-blue-100 mb-2">Work email</label><input id="work_email" name="work_email" type="email" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="alex@company.com"></div>
-                        <div><label for="company" class="block text-sm font-medium text-blue-100 mb-2">Company</label><input id="company" name="company" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Example Inc."></div>
+                        <div><label for="email" class="block text-sm font-medium text-blue-100 mb-2">Primary work email</label><input id="email" name="email" type="email" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="alex.morgan@company.com"></div>
+                        <div><label for="company_name" class="block text-sm font-medium text-blue-100 mb-2">Company name</label><input id="company_name" name="company_name" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Example Holdings"></div>
                         <div><label for="plan" class="block text-sm font-medium text-blue-100 mb-2">Monitoring scope</label><select id="plan" name="plan" class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"><option value="starter">Starter Monitoring</option><option value="portfolio">Portfolio Monitoring</option><option value="custom">Managed Monitoring at Scale</option></select></div>
-                        <div><label for="domains" class="block text-sm font-medium text-blue-100 mb-2">Domains to review</label><textarea id="domains" name="domains" rows="4" class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="example.com, api.example.com, login.example.org"></textarea></div>
-                        <div><label for="notes" class="block text-sm font-medium text-blue-100 mb-2">Notes</label><textarea id="notes" name="notes" rows="4" class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Tell us about business units, environments, or renewal concerns."></textarea></div>
-                        <div class="rounded-2xl bg-blue-500/10 border border-blue-300/20 p-4 text-sm text-blue-100">We'll review your request and reply with the right monitoring scope.</div>
+                        <div><label for="domains_to_review" class="block text-sm font-medium text-blue-100 mb-2">Root domains or key subdomains to review</label><textarea id="domains_to_review" name="domains_to_review" rows="4" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="example.com, api.example.com, login.example.org"></textarea></div>
+                        <div><label for="domain_count" class="block text-sm font-medium text-blue-100 mb-2">Approximate number of domains in scope</label><input id="domain_count" name="domain_count" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="10-25 active domains"></div>
+                        <div><label for="main_objective" class="block text-sm font-medium text-blue-100 mb-2">Primary objective or concern</label><textarea id="main_objective" name="main_objective" rows="4" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Examples: renewal visibility, certificate coverage gaps, monthly oversight, or ownership clarity."></textarea></div>
+                        <div class="rounded-2xl bg-blue-500/10 border border-blue-300/20 p-4 text-sm text-blue-100">Share your scope and we will review it as a managed-service request.</div>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <button id="pricing-submit" type="submit" class="inline-flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300">Request pricing</button>
+                            <button id="pricing-submit" type="submit" class="inline-flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300">Get exact pricing</button>
                             <a href="/index.html#sample-report" id="pricing-sample-link" class="inline-flex justify-center items-center border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors">View Sample Report</a>
                         </div>
-                        <p class="text-sm text-gray-300">Your request will be sent directly to SecureOrbit for review.</p>
-                        <p class="text-xs text-gray-400">We only use this information to review your CertWatch request and follow up with you.</p>
+                        <p class="text-sm text-gray-300">This form routes your pricing request to the SecureOrbit CertWatch intake flow for manual qualification.</p>
+                        <p class="text-xs text-gray-400">Need to add context after submitting? Email <a class="text-blue-300 hover:text-blue-200" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>
                     </form>
-                    <div id="pricing-confirmation" class="hidden mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-500/10 p-4 text-sm text-emerald-100">
-                        <p class="font-semibold">Your request is ready to send directly to SecureOrbit.</p>
-                        <p class="mt-1">SecureOrbit will review your request and follow up directly.</p>
+                    <div id="pricing-inline-status" class="hidden mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-500/10 p-4 text-sm text-emerald-100">
+                        <p class="font-semibold">Submitting your request to SecureOrbit.</p>
+                        <p class="mt-1">Please wait while we record your request.</p>
                     </div>
+                    <iframe id="pricing-submit-target" name="pricing-submit-target" title="Pricing request submission target" class="hidden"></iframe>
                 </section>
                 <aside class="space-y-6">
                     <div class="bg-gray-900/70 border border-white/10 rounded-3xl p-6">
                         <p class="text-sm uppercase tracking-[0.25em] text-cyan-300 mb-3">What happens next</p>
                         <ul class="space-y-3 text-gray-200">
-                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">We review your domain count and monitoring scope.</li>
-                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">We recommend the right CertWatch coverage.</li>
-                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">We follow up directly with pricing and onboarding steps.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">We review your scope, domain count, and operating requirements.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">We confirm the right CertWatch monitoring approach and exact pricing.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">We follow up by email with the next step.</li>
                         </ul>
                     </div>
                     <div class="bg-gray-900/70 border border-white/10 rounded-3xl p-6">
                         <p class="text-sm uppercase tracking-[0.25em] text-purple-300 mb-3">Need a scan first?</p>
-                        <p class="text-gray-300 mb-4">If you want a lower-friction first step, request a free certificate scan instead.</p>
-                        <a href="/scan.html?request_type=free_scan" class="inline-flex justify-center items-center w-full border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors">Get a Free Certificate Scan</a>
+                        <p class="text-gray-300 mb-4">If you prefer a lighter qualification step first, request a free certificate scan instead.</p>
+                        <a href="/scan.html?request_type=free_scan" class="inline-flex justify-center items-center w-full border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors">Get a free certificate scan</a>
                     </div>
                 </aside>
             </div>
@@ -81,34 +94,77 @@
         (function () {
             var form = document.getElementById("pricing-request-form");
             var planField = document.getElementById("plan");
-            var confirmation = document.getElementById("pricing-confirmation");
+            var inlineStatus = document.getElementById("pricing-inline-status");
+            var submitTarget = document.getElementById("pricing-submit-target");
             var sampleLink = document.getElementById("pricing-sample-link");
-            var config = window.certWatchFunnelConfig;
             var funnel = window.certWatchFunnel;
+            var capabilities = funnel.getLeadFlowCapabilities();
             var params = new URLSearchParams(window.location.search);
+            var submitButton = document.getElementById("pricing-submit");
+            var awaitingSubmissionResult = false;
+
             planField.value = funnel.normalizePlan(params.get("plan") || "custom");
             sampleLink.setAttribute("href", funnel.getSampleReportHref());
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
-                if (!form.reportValidity()) return;
-                var formData = new FormData(form);
-                var payload = {
-                    full_name: formData.get("full_name"),
-                    work_email: formData.get("work_email"),
-                    company: formData.get("company"),
-                    plan: funnel.normalizePlan(formData.get("plan")),
-                    domains: formData.get("domains"),
-                    notes: formData.get("notes")
-                };
-                confirmation.classList.remove("hidden");
-                if (config.CERTWATCH_PRICING_FORM_URL) {
-                    form.action = config.CERTWATCH_PRICING_FORM_URL;
-                    form.method = "GET";
-                    form.target = "_blank";
-                    setTimeout(function () { form.submit(); }, 150);
+
+            submitTarget.addEventListener("load", function () {
+                if (!awaitingSubmissionResult) return;
+
+                awaitingSubmissionResult = false;
+                inlineStatus.classList.remove("hidden");
+                submitButton.disabled = false;
+                submitButton.classList.remove("opacity-70", "cursor-not-allowed");
+                submitButton.textContent = "Get exact pricing";
+
+                if (!funnel.didIframeReachSuccessUrl(submitTarget)) {
+                    inlineStatus.className = "mt-5 rounded-2xl border border-amber-300/20 bg-amber-500/10 p-4 text-sm text-amber-100";
+                    inlineStatus.innerHTML = '<p class="font-semibold">Thanks. Your pricing request has been submitted to SecureOrbit.</p><p class="mt-1">We&apos;ll review your scope and follow up by email with the next step.</p><p class="mt-1">If you do not receive a response within 1 business day, contact us at <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
                     return;
                 }
-                window.location.href = funnel.buildPricingMailto(payload);
+
+                inlineStatus.className = "mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-500/10 p-4 text-sm text-emerald-100";
+                inlineStatus.innerHTML = '<p class="font-semibold">Thanks. Your request was submitted for SecureOrbit review.</p><p class="mt-1">We will review your scope and follow up from <a class="text-emerald-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
+                form.reset();
+                planField.value = funnel.normalizePlan(params.get("plan") || "custom");
+            });
+
+            form.addEventListener("submit", function (event) {
+                if (!form.reportValidity()) return;
+
+                var formData = new FormData(form);
+                funnel.fillLeadForm(form, {
+                    requestType: "pricing",
+                    details: {
+                        full_name: formData.get("full_name"),
+                        email: formData.get("email"),
+                        company_name: formData.get("company_name"),
+                        plan: funnel.normalizePlan(formData.get("plan")),
+                        domains_to_review: formData.get("domains_to_review"),
+                        domain_count: formData.get("domain_count"),
+                        main_objective: formData.get("main_objective")
+                    }
+                });
+
+                inlineStatus.classList.remove("hidden");
+                submitButton.disabled = true;
+                submitButton.classList.add("opacity-70", "cursor-not-allowed");
+                submitButton.textContent = "Submitting...";
+
+                if (!funnel.getLeadFormEndpoint()) {
+                    awaitingSubmissionResult = false;
+                    event.preventDefault();
+                    submitButton.disabled = false;
+                    submitButton.classList.remove("opacity-70", "cursor-not-allowed");
+                submitButton.textContent = "Get exact pricing";
+                    inlineStatus.className = "mt-5 rounded-2xl border border-amber-300/20 bg-amber-500/10 p-4 text-sm text-amber-100";
+                    inlineStatus.innerHTML = '<p class="font-semibold">Lead form endpoint not configured.</p><p class="mt-1">Email <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a> while the form backend is being connected.</p>';
+                    return;
+                }
+
+                if (!capabilities.autoresponseConfirmed || !capabilities.replyHandlingConfirmed) {
+                    inlineStatus.innerHTML = '<p class="font-semibold">Submitting your request to SecureOrbit.</p><p class="mt-1">We will confirm receipt on this page. If you need to add context after submitting, email <a class="text-emerald-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
+                }
+
+                awaitingSubmissionResult = true;
             });
         })();
     </script>
