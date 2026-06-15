@@ -11,8 +11,8 @@ window.certWatchContent = {
                 "Alerts",
                 "Monthly report"
             ],
-            ctaLabel: "Get exact pricing",
-            ctaHref: window.certWatchFunnel.getPricingHref("starter"),
+            ctaLabel: window.certWatchFunnel.getStarterCtaLabel(),
+            ctaHref: window.certWatchFunnel.getStarterCheckoutHref(),
             ctaStyle: "primary",
             highlight: false
         },
@@ -73,6 +73,7 @@ window.certWatchContent = {
         }
     ],
     ctaLinks: {
+        "pricing-starter-cta": window.certWatchFunnel.getStarterCheckoutHref(),
         "hero-primary-cta": window.certWatchFunnel.getScanHref(),
         "hero-secondary-cta": window.certWatchFunnel.getSampleReportHref(),
         "about-primary-cta": window.certWatchFunnel.getPricingHref(),
@@ -84,6 +85,7 @@ window.certWatchContent = {
         "pricing-custom-cta": window.certWatchFunnel.getCallHref()
     },
     ctaText: {
+        "pricing-starter-cta": window.certWatchFunnel.getStarterCtaLabel(),
         "contact-schedule-link": window.certWatchFunnel.getCallLabel(),
         "contact-tertiary-cta": window.certWatchFunnel.getCallLabel(),
         "pricing-custom-cta": window.certWatchFunnel.getCallLabel()

@@ -5,6 +5,7 @@
         CERTWATCH_LEAD_FORM_ENDPOINT: runtime.CERTWATCH_LEAD_FORM_ENDPOINT || "https://formsubmit.co/contact@secureorbit.cloud",
         CERTWATCH_INTERNAL_CC_EMAIL: runtime.CERTWATCH_INTERNAL_CC_EMAIL || "",
         CERTWATCH_CALL_URL: runtime.CERTWATCH_CALL_URL || "https://calendly.com/wislest/30min",
+        CERTWATCH_STARTER_CHECKOUT_URL: runtime.CERTWATCH_STARTER_CHECKOUT_URL || "",
         CERTWATCH_SAMPLE_REPORT_URL: runtime.CERTWATCH_SAMPLE_REPORT_URL || "",
         CERTWATCH_SUCCESS_PATH: runtime.CERTWATCH_SUCCESS_PATH || "/form-success.html",
         CERTWATCH_AUTORESPONSE_CONFIRMED: runtime.CERTWATCH_AUTORESPONSE_CONFIRMED === true,
@@ -194,6 +195,14 @@
         },
         getCallHref: function () {
             return config.CERTWATCH_CALL_URL || buildCallMailto();
+        },
+        getStarterCheckoutHref: function () {
+            // Direct Stripe Checkout (Payment Link) for the fixed $99/mo Starter plan
+            // when configured; otherwise fall back to the managed pricing-request form.
+            return config.CERTWATCH_STARTER_CHECKOUT_URL || buildUrl("/request.html", { plan: "starter" });
+        },
+        getStarterCtaLabel: function () {
+            return config.CERTWATCH_STARTER_CHECKOUT_URL ? "Subscribe — $99/month" : "Get exact pricing";
         },
         getLeadFormEndpoint: function () {
             return config.CERTWATCH_LEAD_FORM_ENDPOINT;

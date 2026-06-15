@@ -55,3 +55,19 @@ runTest("confirmed submission redirect only accepts the configured same-origin s
         false
     );
 });
+
+runTest("starter CTA falls back to the pricing-request form when no checkout URL is configured", () => {
+    const funnel = loadFunnel();
+
+    assert.equal(funnel.getStarterCheckoutHref(), "/request.html?plan=starter");
+    assert.equal(funnel.getStarterCtaLabel(), "Get exact pricing");
+});
+
+runTest("starter CTA becomes a direct Stripe subscribe when a checkout URL is configured", () => {
+    const funnel = loadFunnel({
+        CERTWATCH_STARTER_CHECKOUT_URL: "https://buy.stripe.com/test_123"
+    });
+
+    assert.equal(funnel.getStarterCheckoutHref(), "https://buy.stripe.com/test_123");
+    assert.equal(funnel.getStarterCtaLabel(), "Subscribe — $99/month");
+});

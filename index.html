@@ -374,7 +374,7 @@
                             <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Alerts</li>
                             <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Monthly report</li>
                         </ul>
-                        <a href="/request.html?plan=starter" class="inline-block text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover-lift">
+                        <a id="pricing-starter-cta" href="/request.html?plan=starter" class="inline-block text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover-lift">
                             Get exact pricing
                         </a>
                     </article>
@@ -775,6 +775,18 @@
         </div>
     </footer>
 
+    <!--
+      SecureOrbit runtime config.
+      Paste your Stripe Payment Link for the fixed $99/mo Starter plan below to turn the
+      Starter "Get exact pricing" button into a direct "Subscribe — $99/month" button.
+      Leave it empty to keep the managed pricing-request form (no regression).
+      The Payment Link is a public URL (not a secret), so it's safe to commit here.
+    -->
+    <script>
+        window.CERTWATCH_RUNTIME_CONFIG = {
+            CERTWATCH_STARTER_CHECKOUT_URL: "" // e.g. "https://buy.stripe.com/xxxxxxxxxxxx"
+        };
+    </script>
     <script src="/certwatch-funnel.js"></script>
     <script src="/certwatch-content.js"></script>
 
