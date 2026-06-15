@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CertWatch by SecureOrbit - Managed SSL/TLS Monitoring</title>
-    <meta name="description" content="Avoid certificate expiration and SSL/TLS issues with CertWatch, SecureOrbit's managed monitoring service with CT-based discovery, intelligent alerts, and monthly reports.">
+    <title>CertWatch by SecureOrbit - Managed Certificate &amp; Attack Surface Monitoring</title>
+    <meta name="description" content="SecureOrbit's managed monitoring for what attackers see first: TLS certificate expiry and SSL/TLS issues (CertWatch) plus external attack surface monitoring — CT-based discovery, intelligent alerts, and monthly reports.">
     <meta name="theme-color" content="#0b1220">
     <link rel="canonical" href="https://secureorbit.cloud/">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -13,12 +13,12 @@
     <!-- SEO: Open Graph / Twitter -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SecureOrbit">
-    <meta property="og:title" content="CertWatch by SecureOrbit - Managed SSL/TLS Monitoring">
-    <meta property="og:description" content="Managed SSL/TLS certificate monitoring with CT-based discovery, intelligent alerts, and monthly reports from SecureOrbit.">
+    <meta property="og:title" content="CertWatch by SecureOrbit - Managed Certificate &amp; Attack Surface Monitoring">
+    <meta property="og:description" content="Managed SSL/TLS certificate monitoring plus external attack surface monitoring — CT-based discovery, intelligent alerts, and monthly reports from SecureOrbit.">
     <meta property="og:url" content="https://secureorbit.cloud/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="CertWatch by SecureOrbit - Managed SSL/TLS Monitoring">
-    <meta name="twitter:description" content="Managed SSL/TLS certificate monitoring with CT-based discovery, intelligent alerts, and monthly reports from SecureOrbit.">
+    <meta name="twitter:title" content="CertWatch by SecureOrbit - Managed Certificate &amp; Attack Surface Monitoring">
+    <meta name="twitter:description" content="Managed SSL/TLS certificate monitoring plus external attack surface monitoring — CT-based discovery, intelligent alerts, and monthly reports from SecureOrbit.">
 
     <!-- Security: Content Security Policy (limited via meta) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto: https:; frame-ancestors 'none'; upgrade-insecure-requests;">
@@ -103,8 +103,7 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="#certwatch" class="px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-blue-200 hover:text-white transition-colors">CertWatch</a>
-                    <a href="#auditcloud" class="hover:text-blue-400 transition-colors">AuditCloud</a>
-                    <a href="#services" class="hover:text-blue-400 transition-colors">Services</a>
+                    <a href="#attack-surface" class="hover:text-blue-400 transition-colors">Attack Surface</a>
                     <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
                     <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
                 </div>
@@ -119,8 +118,7 @@
         <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
             <div class="flex flex-col space-y-2 text-white">
                 <a href="#certwatch" class="py-2 border-b border-white/10 text-blue-300">CertWatch</a>
-                <a href="#auditcloud" class="py-2 border-b border-white/10">AuditCloud</a>
-                <a href="#services" class="py-2 border-b border-white/10">Services</a>
+                <a href="#attack-surface" class="py-2 border-b border-white/10">Attack Surface</a>
                 <a href="#about" class="py-2 border-b border-white/10">About</a>
                 <a href="#contact" class="py-2">Contact</a>
             </div>
@@ -394,7 +392,7 @@
                             <li class="rounded-2xl bg-black/20 border border-white/10 p-4">CT-based discovery</li>
                             <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Priority alerts</li>
                         </ul>
-                        <a href="/request.html?plan=portfolio" class="inline-block text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover-lift">
+                        <a id="pricing-portfolio-cta" href="/request.html?plan=portfolio" class="inline-block text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover-lift">
                             Get exact pricing
                         </a>
                     </article>
@@ -546,111 +544,96 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="auditcloud" class="py-16 bg-gray-900 border-t border-white/5">
+    <!-- External Attack Surface (EASM) Section -->
+    <section id="attack-surface" class="py-20 bg-gray-900 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <p class="text-sm uppercase tracking-[0.25em] text-gray-500 mb-3">Beyond CertWatch</p>
-                <h2 class="text-3xl font-bold mb-4 text-gray-200">
-                    <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">AuditCloud</span>
+                <p class="text-sm uppercase tracking-[0.3em] text-purple-300 mb-4">Going Further · Managed by SecureOrbit</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-5">
+                    See your external attack surface the way an attacker does
                 </h2>
-                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
-                    CertWatch is the first managed module under AuditCloud. SecureOrbit also delivers broader cloud security assessments, reporting, and automation services.
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Certificates are one part of what's exposed to the internet. SecureOrbit's External Attack Surface monitoring maps the assets, services, and weaknesses an outside attacker can already see across your domains — then prioritizes what to fix first. It's the natural step up from CertWatch for teams that want full outside-in visibility.
+                </p>
+                <p class="text-sm text-gray-500 max-w-3xl mx-auto mt-4">
+                    Defensive and authorized only. We assess assets you own or are explicitly authorized to monitor, using an outside-in view — no intrusive testing or exploitation.
                 </p>
             </div>
-            
-            <div id="services" class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-800/80 rounded-xl p-8 hover-lift">
-                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-6">
-                        <span class="text-2xl">📡</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">CertWatch</h3>
-                    <p class="text-gray-300 mb-4">Managed SSL/TLS monitoring operated by SecureOrbit for teams that need visibility without another console to own.</p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>✓ Certificate expiration monitoring</li>
-                        <li>✓ CT-based certificate discovery</li>
-                        <li>✓ Monthly reporting and recommendations</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-gray-800/80 rounded-xl p-8 hover-lift">
-                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-6">
-                        <span class="text-2xl">☁️</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Cloud Security Reviews</h3>
-                    <p class="text-gray-300 mb-4">Assess Azure, AWS, and Microsoft 365 environments for exposure, control gaps, and cloud hygiene risks.</p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>✓ IAM and privileged access review</li>
-                        <li>✓ Storage and network exposure checks</li>
-                        <li>✓ Actionable remediation guidance</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-gray-800/80 rounded-xl p-8 hover-lift">
-                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center mb-6">
-                        <span class="text-2xl">📊</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Reporting & Automation</h3>
-                    <p class="text-gray-300 mb-4">Turn technical findings into executive-ready reports, workflow automation, and repeatable operational improvements.</p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>✓ Monthly and ad hoc reporting</li>
-                        <li>✓ Security workflow automation</li>
-                        <li>✓ Guided next-step recommendations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Tools Showcase -->
-    <section id="tools" class="py-20 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">🛠️ Security Arsenal</h2>
-                <p class="text-xl text-gray-300">Comprehensive cybersecurity tools for modern threats</p>
+            <div class="grid lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-xl mb-5">🛰️</div>
+                    <h3 class="text-2xl font-bold mb-3">What it is</h3>
+                    <p class="text-gray-300 leading-7">A managed external attack surface assessment and ongoing monitoring service. You share the domains in scope; we discover the assets tied to them and report the exposures that matter, ranked by priority.</p>
+                </div>
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-xl mb-5">🎯</div>
+                    <h3 class="text-2xl font-bold mb-3">Why it matters</h3>
+                    <p class="text-gray-300 leading-7">Forgotten subdomains, exposed services, weak email authentication, and look-alike domains are common entry points. Most teams don't have a single, current view of everything that's reachable from the outside.</p>
+                </div>
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center text-xl mb-5">📑</div>
+                    <h3 class="text-2xl font-bold mb-3">What you get</h3>
+                    <p class="text-gray-300 leading-7">An External Attack Surface Intelligence report with findings grouped into P1 / P2 / P3 priorities and clear recommendations — plus optional ongoing monitoring that alerts you when something new appears.</p>
+                </div>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
-                    <h3 class="text-xl font-bold mb-3 flex items-center">
-                        🔬 <span class="ml-2">SafeScope</span>
-                    </h3>
-                    <p class="text-gray-300 text-sm">Dynamic malware analysis with Windows Sandbox integration</p>
+
+            <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl p-8 border border-white/10 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-center">What we surface</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <p class="text-lg font-semibold mb-2">🔌 Exposed ports &amp; services</p>
+                        <p class="text-sm text-gray-400">Internet-facing ports and services that may not need to be open.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <p class="text-lg font-semibold mb-2">🧱 Web security headers</p>
+                        <p class="text-sm text-gray-400">Missing or weak protections like HSTS and other hardening headers.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <p class="text-lg font-semibold mb-2">✉️ Email spoofing posture</p>
+                        <p class="text-sm text-gray-400">SPF, DKIM, and DMARC gaps that make domain spoofing easier.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <p class="text-lg font-semibold mb-2">🌐 Forgotten subdomains</p>
+                        <p class="text-sm text-gray-400">Exposed or stale subdomains and assets your team may have lost track of.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <p class="text-lg font-semibold mb-2">🪪 Look-alike domains</p>
+                        <p class="text-sm text-gray-400">Typosquat and look-alike domains that could be used to impersonate you.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <p class="text-lg font-semibold mb-2">🔓 Leaked credentials</p>
+                        <p class="text-sm text-gray-400">Company credentials found in known public breach datasets.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <p class="text-lg font-semibold mb-2">🐞 Known vulnerabilities</p>
+                        <p class="text-sm text-gray-400">Publicly known CVEs associated with the software you expose.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <p class="text-lg font-semibold mb-2">🔐 TLS &amp; certificate posture</p>
+                        <p class="text-sm text-gray-400">Certificate and TLS weaknesses, building on the same engine as CertWatch.</p>
+                    </div>
+                    <div class="rounded-2xl bg-gray-900/70 border border-white/10 p-5">
+                        <p class="text-lg font-semibold mb-2">🧭 Prioritized findings</p>
+                        <p class="text-sm text-gray-400">Everything ranked P1 / P2 / P3 so you fix what matters first.</p>
+                    </div>
                 </div>
-                
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
-                    <h3 class="text-xl font-bold mb-3 flex items-center">
-                        ⚡ <span class="ml-2">SOC Playbooks</span>
-                    </h3>
-                    <p class="text-gray-300 text-sm">Automated incident response with Sentinel & Logic Apps</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
-                    <h3 class="text-xl font-bold mb-3 flex items-center">
-                        🌐 <span class="ml-2">Network Enumeration</span>
-                    </h3>
-                    <p class="text-gray-300 text-sm">Windows infrastructure share analysis & security assessment</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
-                    <h3 class="text-xl font-bold mb-3 flex items-center">
-                        🛡️ <span class="ml-2">DefenderHunting</span>
-                    </h3>
-                    <p class="text-gray-300 text-sm">Automated IoC analysis via Microsoft Defender Advanced Hunting</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
-                    <h3 class="text-xl font-bold mb-3 flex items-center">
-                        🔄 <span class="ml-2">n8n Automation</span>
-                    </h3>
-                    <p class="text-gray-300 text-sm">Custom workflow orchestration for security operations</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 hover-lift">
-                    <h3 class="text-xl font-bold mb-3 flex items-center">
-                        📈 <span class="ml-2">Custom Scripts</span>
-                    </h3>
-                    <p class="text-gray-300 text-sm">PowerShell & Python automation for specialized security tasks</p>
+            </div>
+
+            <div class="rounded-3xl bg-gray-900/75 border border-purple-400/40 shadow-xl shadow-purple-950/30 ring-1 ring-purple-400/20 p-8">
+                <div class="grid lg:grid-cols-[minmax(0,1fr),300px] gap-8 items-center">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.25em] text-purple-300 mb-3">External Attack Surface · Assessment &amp; Monitoring</p>
+                        <h3 class="text-3xl font-bold mb-3">A step up from CertWatch</h3>
+                        <p class="text-lg text-gray-300 max-w-2xl">Start with a one-time external attack surface assessment, then keep it monitored. Scope and pricing depend on the size of your footprint, so we put together a tailored proposal after a short scoping conversation.</p>
+                    </div>
+                    <div class="text-center lg:text-right">
+                        <p class="text-2xl font-bold text-white mb-1">Scoped to your footprint</p>
+                        <p class="text-sm text-gray-400 mb-5">One-time assessment or ongoing monitoring</p>
+                        <a id="easm-call-cta" href="mailto:contact@secureorbit.cloud?subject=External%20Attack%20Surface%20-%20SecureOrbit" class="inline-block text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover-lift">
+                            Book a scoping call
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -663,25 +646,25 @@
                 <div>
                     <h2 class="text-4xl font-bold mb-6">About SecureOrbit</h2>
                     <p class="text-xl text-gray-300 mb-6">
-                        SecureOrbit delivers managed security services and automation for Azure, AWS, and Microsoft 365 environments.
-                        CertWatch is operated by our team internally, so clients receive alerts, reports, and recommendations without needing direct console access.
+                        SecureOrbit provides managed external monitoring for the things attackers see first: your certificates and your internet-facing attack surface.
+                        We operate the monitoring internally, so clients receive alerts, reports, and recommendations without needing direct console access.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-center">
                             <div class="w-4 h-4 bg-blue-500 rounded-full mr-4"></div>
-                            <span>SOC Operations & Incident Response Automation</span>
+                            <span>Managed SSL/TLS certificate monitoring (CertWatch)</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-4 h-4 bg-purple-500 rounded-full mr-4"></div>
-                            <span>Cloud Security Architecture & Compliance</span>
+                            <span>External attack surface assessment &amp; monitoring</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-4 h-4 bg-green-500 rounded-full mr-4"></div>
-                            <span>Malware Analysis & Threat Hunting</span>
+                            <span>Prioritized findings with clear remediation guidance</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-4 h-4 bg-yellow-500 rounded-full mr-4"></div>
-                            <span>Security Orchestration & Workflow Automation</span>
+                            <span>Monthly reporting and proactive alerts — no console to manage</span>
                         </div>
                     </div>
                 </div>
@@ -777,14 +760,15 @@
 
     <!--
       SecureOrbit runtime config.
-      Paste your Stripe Payment Link for the fixed $99/mo Starter plan below to turn the
-      Starter "Get exact pricing" button into a direct "Subscribe — $99/month" button.
-      Leave it empty to keep the managed pricing-request form (no regression).
-      The Payment Link is a public URL (not a secret), so it's safe to commit here.
+      Paste your Stripe Payment Link for a fixed-price plan below to turn that plan's
+      "Get exact pricing" button into a direct "Subscribe" button.
+      Leave a slot empty to keep the managed pricing-request form for that plan (no regression).
+      Payment Links are public URLs (not secrets), so they're safe to commit here.
     -->
     <script>
         window.CERTWATCH_RUNTIME_CONFIG = {
-            CERTWATCH_STARTER_CHECKOUT_URL: "https://buy.stripe.com/test_00w7sMd9GfpigffaAP8ww00" // Stripe TEST Payment Link — swap for the live link when going live
+            CERTWATCH_STARTER_CHECKOUT_URL: "https://buy.stripe.com/test_00w7sMd9GfpigffaAP8ww00", // Starter $99/mo — Stripe TEST Payment Link (swap for live at go-live)
+            CERTWATCH_PORTFOLIO_CHECKOUT_URL: "" // Portfolio $249/mo — paste the Stripe Payment Link here to enable the Subscribe button
         };
     </script>
     <script src="/certwatch-funnel.js"></script>

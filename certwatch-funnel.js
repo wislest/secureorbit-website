@@ -6,6 +6,7 @@
         CERTWATCH_INTERNAL_CC_EMAIL: runtime.CERTWATCH_INTERNAL_CC_EMAIL || "",
         CERTWATCH_CALL_URL: runtime.CERTWATCH_CALL_URL || "https://calendly.com/wislest/30min",
         CERTWATCH_STARTER_CHECKOUT_URL: runtime.CERTWATCH_STARTER_CHECKOUT_URL || "",
+        CERTWATCH_PORTFOLIO_CHECKOUT_URL: runtime.CERTWATCH_PORTFOLIO_CHECKOUT_URL || "",
         CERTWATCH_SAMPLE_REPORT_URL: runtime.CERTWATCH_SAMPLE_REPORT_URL || "",
         CERTWATCH_SUCCESS_PATH: runtime.CERTWATCH_SUCCESS_PATH || "/form-success.html",
         CERTWATCH_AUTORESPONSE_CONFIRMED: runtime.CERTWATCH_AUTORESPONSE_CONFIRMED === true,
@@ -22,6 +23,20 @@
             portfolio: "Portfolio Monitoring",
             custom: "Managed Monitoring at Scale"
         }[normalizePlan(plan)];
+    }
+
+    function checkoutUrlForPlan(plan) {
+        return {
+            starter: config.CERTWATCH_STARTER_CHECKOUT_URL,
+            portfolio: config.CERTWATCH_PORTFOLIO_CHECKOUT_URL
+        }[normalizePlan(plan)] || "";
+    }
+
+    function planPriceLabel(plan) {
+        return {
+            starter: "$99/month",
+            portfolio: "$249/month"
+        }[normalizePlan(plan)] || "";
     }
 
     function buildUrl(path, params) {
@@ -196,13 +211,24 @@
         getCallHref: function () {
             return config.CERTWATCH_CALL_URL || buildCallMailto();
         },
+        // Direct Stripe Checkout (Payment Link) for a fixed-price plan when configured;
+        // otherwise fall back to the managed pricing-request form (no regression).
+        getCheckoutHref: function (plan) {
+            var normalizedPlan = normalizePlan(plan);
+            return checkoutUrlForPlan(normalizedPlan) || buildUrl("/request.html", { plan: normalizedPlan });
+        },
+        getCtaLabel: function (plan) {
+            var normalizedPlan = normalizePlan(plan);
+            var checkoutUrl = checkoutUrlForPlan(normalizedPlan);
+            var priceLabel = planPriceLabel(normalizedPlan);
+            return (checkoutUrl && priceLabel) ? ("Subscribe — " + priceLabel) : "Get exact pricing";
+        },
+        // Backward-compatible Starter shortcuts (delegate to the generalized helpers).
         getStarterCheckoutHref: function () {
-            // Direct Stripe Checkout (Payment Link) for the fixed $99/mo Starter plan
-            // when configured; otherwise fall back to the managed pricing-request form.
-            return config.CERTWATCH_STARTER_CHECKOUT_URL || buildUrl("/request.html", { plan: "starter" });
+            return this.getCheckoutHref("starter");
         },
         getStarterCtaLabel: function () {
-            return config.CERTWATCH_STARTER_CHECKOUT_URL ? "Subscribe — $99/month" : "Get exact pricing";
+            return this.getCtaLabel("starter");
         },
         getLeadFormEndpoint: function () {
             return config.CERTWATCH_LEAD_FORM_ENDPOINT;

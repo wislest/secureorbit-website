@@ -11,8 +11,8 @@ window.certWatchContent = {
                 "Alerts",
                 "Monthly report"
             ],
-            ctaLabel: window.certWatchFunnel.getStarterCtaLabel(),
-            ctaHref: window.certWatchFunnel.getStarterCheckoutHref(),
+            ctaLabel: window.certWatchFunnel.getCtaLabel("starter"),
+            ctaHref: window.certWatchFunnel.getCheckoutHref("starter"),
             ctaStyle: "primary",
             highlight: false
         },
@@ -27,8 +27,8 @@ window.certWatchContent = {
                 "CT-based discovery",
                 "Priority alerts"
             ],
-            ctaLabel: "Get exact pricing",
-            ctaHref: window.certWatchFunnel.getPricingHref("portfolio"),
+            ctaLabel: window.certWatchFunnel.getCtaLabel("portfolio"),
+            ctaHref: window.certWatchFunnel.getCheckoutHref("portfolio"),
             ctaStyle: "primary",
             highlight: true
         },
@@ -73,7 +73,8 @@ window.certWatchContent = {
         }
     ],
     ctaLinks: {
-        "pricing-starter-cta": window.certWatchFunnel.getStarterCheckoutHref(),
+        "pricing-starter-cta": window.certWatchFunnel.getCheckoutHref("starter"),
+        "pricing-portfolio-cta": window.certWatchFunnel.getCheckoutHref("portfolio"),
         "hero-primary-cta": window.certWatchFunnel.getScanHref(),
         "hero-secondary-cta": window.certWatchFunnel.getSampleReportHref(),
         "about-primary-cta": window.certWatchFunnel.getPricingHref(),
@@ -82,10 +83,12 @@ window.certWatchContent = {
         "contact-secondary-cta": window.certWatchFunnel.getSampleReportHref(),
         "contact-tertiary-cta": window.certWatchFunnel.getCallHref(),
         "contact-schedule-link": window.certWatchFunnel.getCallHref(),
-        "pricing-custom-cta": window.certWatchFunnel.getCallHref()
+        "pricing-custom-cta": window.certWatchFunnel.getCallHref(),
+        "easm-call-cta": window.certWatchFunnel.getCallHref()
     },
     ctaText: {
-        "pricing-starter-cta": window.certWatchFunnel.getStarterCtaLabel(),
+        "pricing-starter-cta": window.certWatchFunnel.getCtaLabel("starter"),
+        "pricing-portfolio-cta": window.certWatchFunnel.getCtaLabel("portfolio"),
         "contact-schedule-link": window.certWatchFunnel.getCallLabel(),
         "contact-tertiary-cta": window.certWatchFunnel.getCallLabel(),
         "pricing-custom-cta": window.certWatchFunnel.getCallLabel()

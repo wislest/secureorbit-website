@@ -1,26 +1,25 @@
-# SecureOrbit - Cloud Security Automation
+# SecureOrbit - Managed Certificate & Attack Surface Monitoring
 
-🔐 **Professional cybersecurity services specializing in cloud security audits, SOC automation, and threat analysis.**
+🔐 **Managed external monitoring for the things attackers see first: your TLS certificates and your internet-facing attack surface.**
 
 ## 🌐 Live Website
 Visit: [secureorbit.cloud](https://secureorbit.cloud)
 
-## 🏆 Featured Services
+## 🏆 Services
 
-### AuditCloud360
-Comprehensive automated security audits for Azure & AWS infrastructure:
-- MFA & Authentication Analysis
-- Cloud Storage Security Assessment  
-- Compliance & Reporting
-- Security Score Calculation
+### CertWatch — Managed SSL/TLS Monitoring
+SecureOrbit operates the monitoring internally and delivers outcomes to your team — no console to manage:
+- Certificate expiration monitoring and early alerts
+- CT-based certificate discovery (incl. unknown/shadow domains)
+- Monthly PDF reports with recommended next steps
 
-### Security Arsenal
-- **SafeScope**: Dynamic malware analysis with Windows Sandbox
-- **SOC Playbooks**: Automated incident response with Sentinel & Logic Apps
-- **Network Enumeration**: Windows infrastructure share analysis
-- **DefenderHunting**: Automated IoC analysis via Microsoft Defender
-- **n8n Automation**: Custom workflow orchestration
-- **Custom Scripts**: PowerShell & Python security automation
+### External Attack Surface (EASM) — Assessment & Monitoring
+An outside-in view of what's exposed across your domains, ranked P1 / P2 / P3 (defensive, authorized assets only):
+- Exposed ports & services, web security headers
+- Email spoofing posture (SPF / DKIM / DMARC)
+- Forgotten subdomains, look-alike/typosquat domains
+- Leaked credentials in known breach datasets, known CVEs
+- External Attack Surface Intelligence report with remediation guidance
 
 ## 🚀 Quick Start
 
@@ -53,7 +52,7 @@ Comprehensive automated security audits for Azure & AWS infrastructure:
 
 ## 📄 License
 
-© 2025 SecureOrbit - All rights reserved
+© 2026 SecureOrbit - All rights reserved
 
 ---
 
