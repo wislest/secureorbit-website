@@ -3,9 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submission Received</title>
+    <title>Confirmation — SecureOrbit</title>
+    <meta name="robots" content="noindex">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto: https:; frame-ancestors 'none'; upgrade-insecure-requests;">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com/3.4.10"></script>
 </head>
-<body>
-    Submission received.
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <!-- Nav -->
+    <nav class="w-full border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex items-center">
+            <a href="/" class="flex items-center">
+                <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+                    <span class="text-white font-bold text-xl">S</span>
+                </div>
+                <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">SecureOrbit</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Confirmation card -->
+    <main class="flex-1 flex items-center justify-center px-4 py-16">
+        <div class="w-full max-w-xl rounded-3xl bg-gray-800/60 border border-white/10 p-8 sm:p-10 text-center shadow-xl shadow-black/30">
+            <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/15 border border-green-400/30">
+                <svg class="h-8 w-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+            </div>
+
+            <p class="text-xs uppercase tracking-[0.25em] text-blue-300 mb-3">SecureOrbit · CertWatch</p>
+            <h1 id="confirm-title" class="text-2xl sm:text-3xl font-bold mb-3">Subscription confirmed — welcome aboard</h1>
+            <p id="confirm-message" class="text-gray-300 leading-relaxed mb-8">
+                Thank you. Your SecureOrbit Starter subscription is confirmed. Our team is setting up your managed
+                certificate monitoring and will email you within <strong class="text-white">1 business day</strong>
+                to confirm scope and next steps.
+            </p>
+
+            <!-- What happens next -->
+            <div id="next-steps" class="text-left space-y-3 mb-8">
+                <div class="flex items-start gap-3 rounded-2xl bg-black/20 border border-white/10 p-4">
+                    <span class="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold">1</span>
+                    <p class="text-sm text-gray-300">We confirm the domain(s) you submitted and the monitoring scope.</p>
+                </div>
+                <div class="flex items-start gap-3 rounded-2xl bg-black/20 border border-white/10 p-4">
+                    <span class="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold">2</span>
+                    <p class="text-sm text-gray-300">We set up continuous certificate monitoring and CT-based discovery on your scope.</p>
+                </div>
+                <div class="flex items-start gap-3 rounded-2xl bg-black/20 border border-white/10 p-4">
+                    <span class="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold">3</span>
+                    <p class="text-sm text-gray-300">You start receiving alerts and monthly reports — no dashboard to manage.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="/" class="inline-block text-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300">Back to SecureOrbit</a>
+                <a id="confirm-contact" href="mailto:contact@secureorbit.cloud" class="inline-block text-center bg-white/10 hover:bg-white/20 border border-white/15 px-6 py-3 rounded-lg font-semibold transition-colors">Contact us</a>
+            </div>
+            <p class="mt-6 text-xs text-gray-500">Questions? <a href="mailto:contact@secureorbit.cloud" class="text-blue-300 hover:text-blue-200 underline">contact@secureorbit.cloud</a> — we reply within 1 business day.</p>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10">
+        <div class="max-w-5xl mx-auto px-4 py-6 text-center text-xs text-gray-500">
+            © <span id="year">2026</span> SecureOrbit · Managed certificate monitoring &amp; external attack surface intelligence
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            try {
+                document.getElementById('year').textContent = new Date().getFullYear();
+                var type = new URLSearchParams(window.location.search).get('type');
+                var title = document.getElementById('confirm-title');
+                var msg = document.getElementById('confirm-message');
+                var steps = document.getElementById('next-steps');
+
+                function setSteps(items) {
+                    steps.innerHTML = items.map(function (text, i) {
+                        return '<div class="flex items-start gap-3 rounded-2xl bg-black/20 border border-white/10 p-4">' +
+                            '<span class="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold">' + (i + 1) + '</span>' +
+                            '<p class="text-sm text-gray-300">' + text + '</p></div>';
+                    }).join('');
+                }
+
+                if (type === 'pricing') {
+                    title.textContent = 'Pricing request received';
+                    msg.innerHTML = 'Thank you. We’ll review your scope and domain count, confirm the right CertWatch monitoring approach, and reply with exact pricing within <strong class="text-white">1 business day</strong>.';
+                    setSteps([
+                        'We review your scope, domain count and requirements.',
+                        'We confirm the right CertWatch monitoring approach and exact pricing.',
+                        'We follow up by email with the next step.'
+                    ]);
+                } else if (type === 'free_scan') {
+                    title.textContent = 'Scan request received';
+                    msg.innerHTML = 'Thank you. We’ll run a certificate scan on the domains you submitted and follow up by email with what we find and the recommended next step, within <strong class="text-white">1 business day</strong>.';
+                    setSteps([
+                        'We run a certificate scan on your submitted domains.',
+                        'We summarise findings and the recommended next step.',
+                        'We follow up by email — no commitment required.'
+                    ]);
+                }
+                // default (no type) = Stripe subscribe confirmation, already in the HTML.
+            } catch (e) { /* fail-safe: keep default content */ }
+        })();
+    </script>
 </body>
 </html>
