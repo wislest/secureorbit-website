@@ -124,43 +124,57 @@
                 form.reset();
             });
 
+            var FREE_SCAN_ENDPOINT = "https://certwatch.secureorbit.cloud/api/public/free-scan";
+
+            function resetButton() {
+                submitButton.disabled = false;
+                submitButton.classList.remove("opacity-70", "cursor-not-allowed");
+                submitButton.textContent = "Get a Free Certificate Scan";
+            }
+
             form.addEventListener("submit", function (event) {
+                event.preventDefault();
                 if (!form.reportValidity()) return;
 
-                var formData = new FormData(form);
-                funnel.fillLeadForm(form, {
-                    requestType: "free_scan",
-                    details: {
-                        full_name: formData.get("full_name"),
-                        email: formData.get("email"),
-                        company_name: formData.get("company_name"),
-                        domains_to_review: formData.get("domains_to_review"),
-                        domain_count: formData.get("domain_count"),
-                        main_objective: formData.get("main_objective")
-                    }
-                });
+                var fd = new FormData(form);
+                var body = {
+                    full_name: fd.get("full_name") || "",
+                    email: fd.get("email") || "",
+                    company_name: fd.get("company_name") || "",
+                    domains_to_review: fd.get("domains_to_review") || "",
+                    domain_count: fd.get("domain_count") || "",
+                    main_objective: fd.get("main_objective") || "",
+                    website: fd.get("_honey") || ""
+                };
 
-                inlineStatus.classList.remove("hidden");
                 submitButton.disabled = true;
                 submitButton.classList.add("opacity-70", "cursor-not-allowed");
                 submitButton.textContent = "Submitting...";
+                inlineStatus.classList.remove("hidden");
+                inlineStatus.className = "mt-5 rounded-2xl border border-blue-300/20 bg-blue-500/10 p-4 text-sm text-blue-100";
+                inlineStatus.innerHTML = '<p class="font-semibold">Submitting your request to SecureOrbit...</p>';
 
-                if (!funnel.getLeadFormEndpoint()) {
-                    awaitingSubmissionResult = false;
-                    event.preventDefault();
-                    submitButton.disabled = false;
-                    submitButton.classList.remove("opacity-70", "cursor-not-allowed");
-                    submitButton.textContent = "Get a Free Certificate Scan";
+                fetch(FREE_SCAN_ENDPOINT, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(body)
+                }).then(function (res) {
+                    if (res.ok) return res.json().catch(function () { return {}; });
+                    var e = new Error("http"); e.code = res.status; throw e;
+                }).then(function () {
+                    resetButton();
+                    inlineStatus.className = "mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-500/10 p-4 text-sm text-emerald-100";
+                    inlineStatus.innerHTML = '<p class="font-semibold">Thanks &mdash; your free scan request was received.</p><p class="mt-1">We will review the domains you shared and follow up by email from <a class="text-emerald-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
+                    form.reset();
+                }).catch(function (err) {
+                    resetButton();
                     inlineStatus.className = "mt-5 rounded-2xl border border-amber-300/20 bg-amber-500/10 p-4 text-sm text-amber-100";
-                    inlineStatus.innerHTML = '<p class="font-semibold">Lead form endpoint not configured.</p><p class="mt-1">Email <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a> while the form backend is being connected.</p>';
-                    return;
-                }
-
-                if (!capabilities.autoresponseConfirmed || !capabilities.replyHandlingConfirmed) {
-                    inlineStatus.innerHTML = '<p class="font-semibold">Submitting your request to SecureOrbit.</p><p class="mt-1">We will confirm receipt on this page. If you need to add context after submitting, email <a class="text-emerald-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
-                }
-
-                awaitingSubmissionResult = true;
+                    if (err && err.code === 429) {
+                        inlineStatus.innerHTML = '<p class="font-semibold">Too many requests right now.</p><p class="mt-1">Please try again in a few minutes, or email <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
+                    } else {
+                        inlineStatus.innerHTML = '<p class="font-semibold">We could not submit the form automatically.</p><p class="mt-1">Please email your domains to <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a> and we&apos;ll follow up.</p>';
+                    }
+                });
             });
         })();
     </script>
