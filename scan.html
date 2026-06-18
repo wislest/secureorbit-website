@@ -163,7 +163,7 @@
                     var e = new Error("http"); e.code = res.status; throw e;
                 }).then(function (data) {
                     data = data || {};
-                    resetButton();
+                    submitButton.style.display = "none";
                     if (data.already_used) {
                         inlineStatus.className = "mt-5 rounded-2xl border border-amber-300/20 bg-amber-500/10 p-4 text-sm text-amber-100";
                         inlineStatus.innerHTML = '<p class="font-semibold">This email already used its free scan.</p><p class="mt-1">For more domains or a fresh report, email <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
