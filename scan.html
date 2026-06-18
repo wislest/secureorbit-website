@@ -33,8 +33,8 @@
             <div class="text-center mb-10">
                 <p class="text-sm uppercase tracking-[0.3em] text-blue-200 mb-4">Free Certificate Scan</p>
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">Request a free certificate scan</h1>
-                <p class="text-lg text-blue-100 max-w-3xl mx-auto">Share the domains you want reviewed and SecureOrbit will take a first pass before recommending the next step.</p>
-                <p class="text-sm text-blue-100/80 mt-4">You're requesting a managed CertWatch engagement.</p>
+                <p class="text-lg text-blue-100 max-w-3xl mx-auto">Tell us your domains, confirm your email, and SecureOrbit will scan your primary domain's certificate and email you the report.</p>
+                <p class="text-sm text-blue-100/80 mt-4">Free scan covers one primary domain &mdash; one per email.</p>
             </div>
             <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-8">
                 <section class="bg-gray-900/80 border border-white/10 rounded-3xl p-8 shadow-2xl">
@@ -61,7 +61,7 @@
                             <button id="scan-submit" type="submit" class="inline-flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300">Get a Free Certificate Scan</button>
                             <a href="/request.html?plan=portfolio" class="inline-flex justify-center items-center border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors">Get exact pricing instead</a>
                         </div>
-                        <p class="text-sm text-gray-300">This form routes your scan request to the SecureOrbit CertWatch intake flow for manual qualification.</p>
+                        <p class="text-sm text-gray-300">Confirm your email to start the scan. Your free scan covers one primary domain; the report is emailed to you.</p>
                         <p class="text-xs text-gray-400">Need to add context after submitting? Email <a class="text-blue-300 hover:text-blue-200" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>
                     </form>
                     <div id="scan-inline-status" class="hidden mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-500/10 p-4 text-sm text-emerald-100">
@@ -81,8 +81,8 @@
                     <div class="bg-gray-900/70 border border-white/10 rounded-3xl p-6">
                         <p class="text-sm uppercase tracking-[0.25em] text-purple-300 mb-3">What happens next</p>
                         <ul class="space-y-3 text-gray-200 mb-4">
-                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">We review the domains you shared and check the monitoring fit.</li>
-                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">We follow up by email with the recommended next step.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">You confirm your email, and we automatically scan your primary domain's certificate.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">We email you the certificate report, with the option to monitor every domain.</li>
                         </ul>
                         <a id="scan-sample-link" href="/index.html#sample-report" class="inline-flex justify-center items-center w-full border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors">View Sample Report</a>
                     </div>
@@ -161,10 +161,16 @@
                 }).then(function (res) {
                     if (res.ok) return res.json().catch(function () { return {}; });
                     var e = new Error("http"); e.code = res.status; throw e;
-                }).then(function () {
+                }).then(function (data) {
+                    data = data || {};
                     resetButton();
+                    if (data.already_used) {
+                        inlineStatus.className = "mt-5 rounded-2xl border border-amber-300/20 bg-amber-500/10 p-4 text-sm text-amber-100";
+                        inlineStatus.innerHTML = '<p class="font-semibold">This email already used its free scan.</p><p class="mt-1">For more domains or a fresh report, email <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
+                        return;
+                    }
                     inlineStatus.className = "mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-500/10 p-4 text-sm text-emerald-100";
-                    inlineStatus.innerHTML = '<p class="font-semibold">Thanks &mdash; your free scan request was received.</p><p class="mt-1">We will review the domains you shared and follow up by email from <a class="text-emerald-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
+                    inlineStatus.innerHTML = '<p class="font-semibold">Check your inbox to confirm &#9993;</p><p class="mt-1">We just emailed you a confirmation link. Click it to start your free scan &mdash; your report will be sent straight to your inbox.</p>';
                     form.reset();
                 }).catch(function (err) {
                     resetButton();
