@@ -13,16 +13,31 @@
         CERTWATCH_REPLY_HANDLING_CONFIRMED: runtime.CERTWATCH_REPLY_HANDLING_CONFIRMED === true
     };
 
+    // --- i18n bridge ---------------------------------------------------------
+    // Uses window.SO_I18N when present (browser); degrades to the English
+    // fallback when absent (e.g. the node test harness) so the funnel keeps
+    // working standalone.
+    function currentLang(lang) {
+        if (lang) return lang;
+        return (window.SO_I18N && window.SO_I18N.getLang && window.SO_I18N.getLang()) || "fr";
+    }
+    function tr(key, lang, fallback) {
+        if (window.SO_I18N && window.SO_I18N.t) return window.SO_I18N.t(key, currentLang(lang));
+        return fallback;
+    }
+    function tf(key, params, lang, fallback) {
+        if (window.SO_I18N && window.SO_I18N.tf) return window.SO_I18N.tf(key, params, currentLang(lang));
+        return fallback;
+    }
+
     function normalizePlan(plan) {
         return ["starter", "portfolio", "custom"].indexOf(plan) >= 0 ? plan : "custom";
     }
 
-    function getPlanLabel(plan) {
-        return {
-            starter: "Starter Monitoring",
-            portfolio: "Portfolio Monitoring",
-            custom: "Managed Monitoring at Scale"
-        }[normalizePlan(plan)];
+    function getPlanLabel(plan, lang) {
+        var key = { starter: "plan.starter", portfolio: "plan.portfolio", custom: "plan.custom" }[normalizePlan(plan)];
+        var fallback = { starter: "Starter Monitoring", portfolio: "Portfolio Monitoring", custom: "Managed Monitoring at Scale" }[normalizePlan(plan)];
+        return tr(key, lang, fallback);
     }
 
     function checkoutUrlForPlan(plan) {
@@ -32,11 +47,12 @@
         }[normalizePlan(plan)] || "";
     }
 
-    function planPriceLabel(plan) {
-        return {
-            starter: "$99/month",
-            portfolio: "$249/month"
-        }[normalizePlan(plan)] || "";
+    function planPriceLabel(plan, lang) {
+        var p = normalizePlan(plan);
+        if (currentLang(lang) === "fr") {
+            return { starter: "99 $/mois", portfolio: "249 $/mois" }[p] || "";
+        }
+        return { starter: "$99/month", portfolio: "$249/month" }[p] || "";
     }
 
     function buildUrl(path, params) {
@@ -55,10 +71,10 @@
             "&body=" + encodeURIComponent(lines.join("\n"));
     }
 
-    function buildPricingMailto(details) {
+    function buildPricingMailto(details, lang) {
         var plan = normalizePlan(details.plan);
         return encodeMailto(
-            "Request Pricing - CertWatch - " + getPlanLabel(plan),
+            tf("mail.pricing.subject", { plan: getPlanLabel(plan, lang) }, lang, "Request Pricing - CertWatch - " + getPlanLabel(plan, lang)),
             [
                 "Request Type: pricing",
                 "Selected Plan: " + plan,
@@ -69,14 +85,14 @@
                 "Approximate Number of Domains: " + (details.domain_count || ""),
                 "Main Concern or Objective: " + (details.main_objective || details.notes || ""),
                 "",
-                "Please reply with the recommended monitoring scope and next steps."
+                tr("mail.pricing.closing", lang, "Please reply with the recommended monitoring scope and next steps.")
             ]
         );
     }
 
-    function buildScanMailto(details) {
+    function buildScanMailto(details, lang) {
         return encodeMailto(
-            "Free Certificate Scan Request - CertWatch",
+            tr("mail.scan.subject", lang, "Free Certificate Scan Request - CertWatch"),
             [
                 "Request Type: free_scan",
                 "Full Name: " + (details.full_name || ""),
@@ -86,20 +102,20 @@
                 "Approximate Number of Domains: " + (details.domain_count || ""),
                 "Main Concern or Objective: " + (details.main_objective || details.notes || ""),
                 "",
-                "Please review these domains and follow up with the next step."
+                tr("mail.scan.closing", lang, "Please review these domains and follow up with the next step.")
             ]
         );
     }
 
-    function buildCallMailto() {
+    function buildCallMailto(lang) {
         return encodeMailto(
-            "Book a Call - CertWatch",
+            tr("mail.call.subject", lang, "Book a Call - CertWatch"),
             [
-                "I'd like to talk through CertWatch monitoring scope.",
+                tr("mail.call.l1", lang, "I'd like to talk through CertWatch monitoring scope."),
                 "",
-                "Company:",
-                "Domains / environments to discuss:",
-                "Preferred timing:"
+                tr("mail.call.company", lang, "Company:"),
+                tr("mail.call.domains", lang, "Domains / environments to discuss:"),
+                tr("mail.call.timing", lang, "Preferred timing:")
             ]
         );
     }
@@ -144,27 +160,30 @@
         };
     }
 
-    function buildAutoresponseMessage(requestType) {
+    function buildAutoresponseMessage(requestType, lang) {
         if (requestType === "free_scan") {
-            return "Thanks for contacting SecureOrbit about a CertWatch free certificate scan. We received your request and will reply shortly with the next step. If you need to add context, email contact@secureorbit.cloud.";
+            return tr("autoresponse.free_scan", lang, "Thanks for contacting SecureOrbit about a CertWatch free certificate scan. We received your request and will reply shortly with the next step. If you need to add context, email contact@secureorbit.cloud.");
         }
-        return "Thanks for contacting SecureOrbit about CertWatch managed certificate monitoring. We received your pricing request and will reply shortly with the recommended monitoring scope and next step. If you need to add context, email contact@secureorbit.cloud.";
+        return tr("autoresponse.pricing", lang, "Thanks for contacting SecureOrbit about CertWatch managed certificate monitoring. We received your pricing request and will reply shortly with the recommended monitoring scope and next step. If you need to add context, email contact@secureorbit.cloud.");
     }
 
     function buildInternalSubject(requestType, details) {
+        // Operator-facing (you). Kept in English for a consistent inbox.
         var company = details.company_name || details.company || "Unknown Company";
         if (requestType === "free_scan") {
             return "CertWatch Free Scan Request - " + company;
         }
-        return "CertWatch Pricing Request - " + company + " - " + getPlanLabel(details.plan || "custom");
+        return "CertWatch Pricing Request - " + company + " - " + getPlanLabel(details.plan || "custom", "en");
     }
 
     function fillLeadForm(form, options) {
         var requestType = options.requestType;
         var details = options.details || {};
+        var lang = currentLang(options.lang);
         var replyEmail = details.email || details.work_email || "";
         var internalSummary = [
             "Request type: " + requestType,
+            "Visitor language: " + lang,
             "Full name: " + (details.full_name || ""),
             "Company: " + (details.company_name || details.company || ""),
             "Work email: " + replyEmail,
@@ -174,7 +193,7 @@
         ];
 
         if (requestType === "pricing") {
-            internalSummary.splice(1, 0, "Selected plan: " + getPlanLabel(details.plan || "custom"));
+            internalSummary.splice(2, 0, "Selected plan: " + getPlanLabel(details.plan || "custom", "en"));
         }
 
         function setValue(name, value) {
@@ -189,7 +208,7 @@
 
         setValue("_subject", buildInternalSubject(requestType, details));
         setValue("_next", buildThankYouHref(requestType));
-        setValue("_autoresponse", buildAutoresponseMessage(requestType));
+        setValue("_autoresponse", buildAutoresponseMessage(requestType, lang));
         setValue("_replyto", replyEmail);
         setValue("_cc", config.CERTWATCH_INTERNAL_CC_EMAIL);
         setValue("internal_summary", internalSummary.join("\n"));
@@ -198,8 +217,10 @@
 
     window.certWatchFunnelConfig = config;
     window.certWatchFunnel = {
-        getCallLabel: function () {
-            return config.CERTWATCH_CALL_URL ? "Book a call" : "Request a call";
+        getCallLabel: function (lang) {
+            return config.CERTWATCH_CALL_URL
+                ? tr("cta.bookCall", lang, "Book a call")
+                : tr("cta.requestCall", lang, "Request a call");
         },
         getPricingHref: function (plan) {
             var normalizedPlan = plan ? normalizePlan(plan) : "";
@@ -208,8 +229,8 @@
         getScanHref: function () {
             return buildUrl("/scan.html", { request_type: "free_scan" });
         },
-        getCallHref: function () {
-            return config.CERTWATCH_CALL_URL || buildCallMailto();
+        getCallHref: function (lang) {
+            return config.CERTWATCH_CALL_URL || buildCallMailto(lang);
         },
         // Direct Stripe Checkout (Payment Link) for a fixed-price plan when configured;
         // otherwise fall back to the managed pricing-request form (no regression).
@@ -217,18 +238,21 @@
             var normalizedPlan = normalizePlan(plan);
             return checkoutUrlForPlan(normalizedPlan) || buildUrl("/request.html", { plan: normalizedPlan });
         },
-        getCtaLabel: function (plan) {
+        getCtaLabel: function (plan, lang) {
             var normalizedPlan = normalizePlan(plan);
             var checkoutUrl = checkoutUrlForPlan(normalizedPlan);
-            var priceLabel = planPriceLabel(normalizedPlan);
-            return (checkoutUrl && priceLabel) ? ("Subscribe — " + priceLabel) : "Get exact pricing";
+            var priceLabel = planPriceLabel(normalizedPlan, lang);
+            if (checkoutUrl && priceLabel) {
+                return tf("cta.subscribe", { price: priceLabel }, lang, "Subscribe — " + priceLabel);
+            }
+            return tr("cta.getPricing", lang, "Get exact pricing");
         },
         // Backward-compatible Starter shortcuts (delegate to the generalized helpers).
         getStarterCheckoutHref: function () {
             return this.getCheckoutHref("starter");
         },
-        getStarterCtaLabel: function () {
-            return this.getCtaLabel("starter");
+        getStarterCtaLabel: function (lang) {
+            return this.getCtaLabel("starter", lang);
         },
         getLeadFormEndpoint: function () {
             return config.CERTWATCH_LEAD_FORM_ENDPOINT;

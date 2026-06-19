@@ -1,4 +1,8 @@
 window.certWatchContent = {
+    // NOTE: visible pricing/FAQ copy lives directly in index.html (bilingual via
+    // data-en). This file only supplies CTA hrefs (language-independent) and the
+    // data arrays kept for reference. Dynamic CTA *labels* (Subscribe vs Get exact
+    // pricing) are recomputed live in index.html on load and on language change.
     pricingTiers: [
         {
             eyebrow: "Tier 1",
@@ -11,7 +15,6 @@ window.certWatchContent = {
                 "Alerts",
                 "Monthly report"
             ],
-            ctaLabel: window.certWatchFunnel.getCtaLabel("starter"),
             ctaHref: window.certWatchFunnel.getCheckoutHref("starter"),
             ctaStyle: "primary",
             highlight: false
@@ -27,7 +30,6 @@ window.certWatchContent = {
                 "CT-based discovery",
                 "Priority alerts"
             ],
-            ctaLabel: window.certWatchFunnel.getCtaLabel("portfolio"),
             ctaHref: window.certWatchFunnel.getCheckoutHref("portfolio"),
             ctaStyle: "primary",
             highlight: true
@@ -43,35 +45,12 @@ window.certWatchContent = {
                 "Custom reporting",
                 "Direct support"
             ],
-            ctaLabel: window.certWatchFunnel.getCallLabel(),
             ctaHref: window.certWatchFunnel.getCallHref(),
             ctaStyle: "light",
             highlight: false
         }
     ],
-    pricingNote: "Final pricing depends on domain count and monitoring scope.",
-    faqItems: [
-        {
-            question: "Is CertWatch self-service or managed?",
-            answer: "CertWatch is a managed service. SecureOrbit operates the monitoring, reviews findings internally, and sends your team alerts, monthly reports, and recommended next steps."
-        },
-        {
-            question: "Do clients get a dashboard?",
-            answer: "No client dashboard is required. We run the console internally so your team gets the outcomes without needing another portal to learn or manage."
-        },
-        {
-            question: "How often are reports sent?",
-            answer: "Reports are sent monthly, with alerts delivered in between whenever certificate issues, discoveries, or coverage changes need attention."
-        },
-        {
-            question: "What happens when a certificate is close to expiration?",
-            answer: "We alert your team before the expiration window becomes urgent, include the issue in reporting, and provide recommendations on the renewal owner and next action."
-        },
-        {
-            question: "Can you monitor multiple domains and discovered subdomains?",
-            answer: "Yes. CertWatch can monitor multiple domains across your scope and surface newly discovered certificate activity, including relevant subdomains observed through certificate transparency data."
-        }
-    ],
+    // CTA hrefs are language-independent; applied once on load.
     ctaLinks: {
         "pricing-starter-cta": window.certWatchFunnel.getCheckoutHref("starter"),
         "pricing-portfolio-cta": window.certWatchFunnel.getCheckoutHref("portfolio"),
@@ -85,12 +64,5 @@ window.certWatchContent = {
         "contact-schedule-link": window.certWatchFunnel.getCallHref(),
         "pricing-custom-cta": window.certWatchFunnel.getCallHref(),
         "easm-call-cta": window.certWatchFunnel.getCallHref()
-    },
-    ctaText: {
-        "pricing-starter-cta": window.certWatchFunnel.getCtaLabel("starter"),
-        "pricing-portfolio-cta": window.certWatchFunnel.getCtaLabel("portfolio"),
-        "contact-schedule-link": window.certWatchFunnel.getCallLabel(),
-        "contact-tertiary-cta": window.certWatchFunnel.getCallLabel(),
-        "pricing-custom-cta": window.certWatchFunnel.getCallLabel()
     }
 };

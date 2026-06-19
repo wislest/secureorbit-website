@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get a Free Certificate Scan - SecureOrbit</title>
-    <meta name="description" content="Request a free certificate scan from SecureOrbit CertWatch.">
+    <title data-en="Get a Free Certificate Scan - SecureOrbit">Obtenir un scan de certificat gratuit - SecureOrbit</title>
+    <meta name="description" content="Demandez un scan de certificat gratuit auprès de SecureOrbit CertWatch." data-en-content="Request a free certificate scan from SecureOrbit CertWatch.">
     <meta name="theme-color" content="#0b1220">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="alternate icon" href="/favicon.ico">
@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <script src="https://cdn.tailwindcss.com/3.4.10"></script>
+    <script src="/i18n.js"></script>
     <style>
         .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
         .glass-effect { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); }
@@ -24,17 +25,23 @@
                 <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3"><span class="text-white font-bold text-xl">S</span></div>
                 <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">SecureOrbit</span>
             </a>
-            <a href="/index.html#certwatch" class="text-blue-200 hover:text-white transition-colors">Back to CertWatch</a>
+            <div class="flex items-center gap-4">
+                <div class="so-lang-switch" role="group" aria-label="Language / Langue">
+                    <button type="button" data-setlang="fr">FR</button>
+                    <button type="button" data-setlang="en">EN</button>
+                </div>
+                <a href="/index.html#certwatch" class="text-blue-200 hover:text-white transition-colors" data-en="Back to CertWatch">Retour à CertWatch</a>
+            </div>
         </div>
     </nav>
     <main class="gradient-bg relative overflow-hidden">
         <div class="absolute inset-0 bg-black opacity-25"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="text-center mb-10">
-                <p class="text-sm uppercase tracking-[0.3em] text-blue-200 mb-4">Free Certificate Scan</p>
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Request a free certificate scan</h1>
-                <p class="text-lg text-blue-100 max-w-3xl mx-auto">Tell us your domains, confirm your email, and SecureOrbit will scan your primary domain's certificate and email you the report.</p>
-                <p class="text-sm text-blue-100/80 mt-4">Free scan covers one primary domain &mdash; one per email.</p>
+                <p class="text-sm uppercase tracking-[0.3em] text-blue-200 mb-4" data-en="Free Certificate Scan">Scan de certificat gratuit</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4" data-en="Request a free certificate scan">Demander un scan de certificat gratuit</h1>
+                <p class="text-lg text-blue-100 max-w-3xl mx-auto" data-en="Tell us your domains, confirm your email, and SecureOrbit will scan your primary domain's certificate and email you the report.">Indiquez vos domaines, confirmez votre courriel, et SecureOrbit analysera le certificat de votre domaine principal et vous enverra le rapport par courriel.</p>
+                <p class="text-sm text-blue-100/80 mt-4" data-en="Free scan covers one primary domain &mdash; one per email.">Le scan gratuit couvre un domaine principal &mdash; un seul par courriel.</p>
             </div>
             <div class="grid lg:grid-cols-[1.1fr,0.9fr] gap-8">
                 <section class="bg-gray-900/80 border border-white/10 rounded-3xl p-8 shadow-2xl">
@@ -50,41 +57,41 @@
                         <input id="request_type" name="request_type" type="hidden" value="free_scan">
                         <input type="hidden" name="internal_summary" value="">
                         <input type="hidden" name="submission_source" value="">
-                        <div><label for="full_name" class="block text-sm font-medium text-blue-100 mb-2">Full name</label><input id="full_name" name="full_name" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Alex Morgan"></div>
-                        <div><label for="email" class="block text-sm font-medium text-blue-100 mb-2">Primary work email</label><input id="email" name="email" type="email" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="alex.morgan@company.com"></div>
-                        <div><label for="company_name" class="block text-sm font-medium text-blue-100 mb-2">Company name</label><input id="company_name" name="company_name" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Example Holdings"></div>
-                        <div><label for="domains_to_review" class="block text-sm font-medium text-blue-100 mb-2">Root domains or key subdomains to review</label><textarea id="domains_to_review" name="domains_to_review" rows="4" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="example.com, api.example.com, login.example.org"></textarea></div>
-                        <div><label for="domain_count" class="block text-sm font-medium text-blue-100 mb-2">Approximate number of domains in scope</label><input id="domain_count" name="domain_count" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="5-15 active domains"></div>
-                        <div><label for="main_objective" class="block text-sm font-medium text-blue-100 mb-2">Primary objective or concern</label><textarea id="main_objective" name="main_objective" rows="4" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Examples: locate expiring certificates, uncover missed coverage, or validate the current monitoring scope."></textarea></div>
-                        <div class="rounded-2xl bg-blue-500/10 border border-blue-300/20 p-4 text-sm text-blue-100">Share your scope and we will review it as a managed-service request.</div>
+                        <div><label for="full_name" class="block text-sm font-medium text-blue-100 mb-2" data-en="Full name">Nom complet</label><input id="full_name" name="full_name" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Alex Morgan"></div>
+                        <div><label for="email" class="block text-sm font-medium text-blue-100 mb-2" data-en="Primary work email">Courriel professionnel principal</label><input id="email" name="email" type="email" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="alex.morgan@company.com"></div>
+                        <div><label for="company_name" class="block text-sm font-medium text-blue-100 mb-2" data-en="Company name">Nom de l'entreprise</label><input id="company_name" name="company_name" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Example Holdings"></div>
+                        <div><label for="domains_to_review" class="block text-sm font-medium text-blue-100 mb-2" data-en="Root domains or key subdomains to review">Domaines racines ou sous-domaines clés à examiner</label><textarea id="domains_to_review" name="domains_to_review" rows="4" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="example.com, api.example.com, login.example.org"></textarea></div>
+                        <div><label for="domain_count" class="block text-sm font-medium text-blue-100 mb-2" data-en="Approximate number of domains in scope">Nombre approximatif de domaines visés</label><input id="domain_count" name="domain_count" type="text" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="5-15 domaines actifs" data-en-placeholder="5-15 active domains"></div>
+                        <div><label for="main_objective" class="block text-sm font-medium text-blue-100 mb-2" data-en="Primary objective or concern">Objectif ou préoccupation principale</label><textarea id="main_objective" name="main_objective" rows="4" required class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Exemples : repérer les certificats qui expirent, découvrir une couverture manquée ou valider la portée de surveillance actuelle." data-en-placeholder="Examples: locate expiring certificates, uncover missed coverage, or validate the current monitoring scope."></textarea></div>
+                        <div class="rounded-2xl bg-blue-500/10 border border-blue-300/20 p-4 text-sm text-blue-100" data-en="Share your scope and we will review it as a managed-service request.">Partagez votre portée et nous l'examinerons comme une demande de service géré.</div>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <button id="scan-submit" type="submit" class="inline-flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300">Get a Free Certificate Scan</button>
-                            <a href="/request.html?plan=portfolio" class="inline-flex justify-center items-center border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors">Get exact pricing instead</a>
+                            <button id="scan-submit" type="submit" class="inline-flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-lg font-semibold transition-all duration-300" data-en="Get a Free Certificate Scan">Obtenir un scan de certificat gratuit</button>
+                            <a href="/request.html?plan=portfolio" class="inline-flex justify-center items-center border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors" data-en="Get exact pricing instead">Obtenir plutôt un prix exact</a>
                         </div>
-                        <p class="text-sm text-gray-300">Confirm your email to start the scan. Your free scan covers one primary domain; the report is emailed to you.</p>
-                        <p class="text-xs text-gray-400">Need to add context after submitting? Email <a class="text-blue-300 hover:text-blue-200" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>
+                        <p class="text-sm text-gray-300" data-en="Confirm your email to start the scan. Your free scan covers one primary domain; the report is emailed to you.">Confirmez votre courriel pour lancer le scan. Votre scan gratuit couvre un domaine principal ; le rapport vous est envoyé par courriel.</p>
+                        <p class="text-xs text-gray-400" data-en-html="Need to add context after submitting? Email <a class=&quot;text-blue-300 hover:text-blue-200&quot; href=&quot;mailto:contact@secureorbit.cloud&quot;>contact@secureorbit.cloud</a>.">Besoin d'ajouter du contexte après l'envoi ? Écrivez à <a class="text-blue-300 hover:text-blue-200" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>
                     </form>
                     <div id="scan-inline-status" class="hidden mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-500/10 p-4 text-sm text-emerald-100">
-                        <p class="font-semibold">Submitting your request to SecureOrbit.</p>
-                        <p class="mt-1">Please wait while we record your request.</p>
+                        <p class="font-semibold" data-en="Submitting your request to SecureOrbit.">Envoi de votre demande à SecureOrbit.</p>
+                        <p class="mt-1" data-en="Please wait while we record your request.">Veuillez patienter pendant l'enregistrement de votre demande.</p>
                     </div>
-                    <iframe id="scan-submit-target" name="scan-submit-target" title="Free scan request submission target" class="hidden"></iframe>
+                    <iframe id="scan-submit-target" name="scan-submit-target" title="Cible de soumission de la demande de scan gratuit" data-en-title="Free scan request submission target" class="hidden"></iframe>
                 </section>
                 <aside class="space-y-6">
                     <div class="bg-gray-900/70 border border-white/10 rounded-3xl p-6">
-                        <p class="text-sm uppercase tracking-[0.25em] text-cyan-300 mb-3">What you send us</p>
+                        <p class="text-sm uppercase tracking-[0.25em] text-cyan-300 mb-3" data-en="What you send us">Ce que vous nous envoyez</p>
                         <ul class="space-y-3 text-gray-200">
-                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Your contact details, company, and the domains you want reviewed.</li>
-                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">Your approximate domain count and the main concern you want us to review first.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4" data-en="Your contact details, company, and the domains you want reviewed.">Vos coordonnées, votre entreprise et les domaines à examiner.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4" data-en="Your approximate domain count and the main concern you want us to review first.">Votre nombre approximatif de domaines et la principale préoccupation à examiner en priorité.</li>
                         </ul>
                     </div>
                     <div class="bg-gray-900/70 border border-white/10 rounded-3xl p-6">
-                        <p class="text-sm uppercase tracking-[0.25em] text-purple-300 mb-3">What happens next</p>
+                        <p class="text-sm uppercase tracking-[0.25em] text-purple-300 mb-3" data-en="What happens next">Les prochaines étapes</p>
                         <ul class="space-y-3 text-gray-200 mb-4">
-                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">You confirm your email, and we automatically scan your primary domain's certificate.</li>
-                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4">We email you the certificate report, with the option to monitor every domain.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4" data-en="You confirm your email, and we automatically scan your primary domain's certificate.">Vous confirmez votre courriel, et nous analysons automatiquement le certificat de votre domaine principal.</li>
+                            <li class="rounded-2xl bg-black/20 border border-white/10 p-4" data-en="We email you the certificate report, with the option to monitor every domain.">Nous vous envoyons le rapport de certificat par courriel, avec l'option de surveiller chaque domaine.</li>
                         </ul>
-                        <a id="scan-sample-link" href="/index.html#sample-report" class="inline-flex justify-center items-center w-full border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors">View Sample Report</a>
+                        <a id="scan-sample-link" href="/index.html#sample-report" class="inline-flex justify-center items-center w-full border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-colors" data-en="View Sample Report">Voir un exemple de rapport</a>
                     </div>
                 </aside>
             </div>
@@ -93,6 +100,7 @@
     <script src="/certwatch-funnel.js"></script>
     <script>
         (function () {
+            var t = function (key) { return (window.SO_I18N && window.SO_I18N.t) ? window.SO_I18N.t(key) : key; };
             var form = document.getElementById("scan-request-form");
             var inlineStatus = document.getElementById("scan-inline-status");
             var submitTarget = document.getElementById("scan-submit-target");
@@ -111,16 +119,16 @@
                 inlineStatus.classList.remove("hidden");
                 submitButton.disabled = false;
                 submitButton.classList.remove("opacity-70", "cursor-not-allowed");
-                submitButton.textContent = "Get a Free Certificate Scan";
+                submitButton.textContent = t("scan.btn.default");
 
                 if (!funnel.didIframeReachSuccessUrl(submitTarget)) {
                     inlineStatus.className = "mt-5 rounded-2xl border border-amber-300/20 bg-amber-500/10 p-4 text-sm text-amber-100";
-                    inlineStatus.innerHTML = '<p class="font-semibold">Thanks. Your free scan request has been submitted to SecureOrbit.</p><p class="mt-1">We&apos;ll review your scope and follow up by email with the next step.</p><p class="mt-1">If you do not receive a response within 1 business day, contact us at <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
+                    inlineStatus.innerHTML = t("scan.status.iframeFallback");
                     return;
                 }
 
                 inlineStatus.className = "mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-500/10 p-4 text-sm text-emerald-100";
-                inlineStatus.innerHTML = '<p class="font-semibold">Thanks. Your request was submitted for SecureOrbit review.</p><p class="mt-1">We will review the domains you shared and follow up from <a class="text-emerald-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
+                inlineStatus.innerHTML = t("scan.status.iframeSuccess");
                 form.reset();
             });
 
@@ -129,7 +137,7 @@
             function resetButton() {
                 submitButton.disabled = false;
                 submitButton.classList.remove("opacity-70", "cursor-not-allowed");
-                submitButton.textContent = "Get a Free Certificate Scan";
+                submitButton.textContent = t("scan.btn.default");
             }
 
             form.addEventListener("submit", function (event) {
@@ -149,10 +157,10 @@
 
                 submitButton.disabled = true;
                 submitButton.classList.add("opacity-70", "cursor-not-allowed");
-                submitButton.textContent = "Submitting...";
+                submitButton.textContent = t("scan.btn.submitting");
                 inlineStatus.classList.remove("hidden");
                 inlineStatus.className = "mt-5 rounded-2xl border border-blue-300/20 bg-blue-500/10 p-4 text-sm text-blue-100";
-                inlineStatus.innerHTML = '<p class="font-semibold">Submitting your request to SecureOrbit...</p>';
+                inlineStatus.innerHTML = t("scan.status.submitting");
 
                 fetch(FREE_SCAN_ENDPOINT, {
                     method: "POST",
@@ -166,19 +174,19 @@
                     submitButton.style.display = "none";
                     if (data.already_used) {
                         inlineStatus.className = "mt-5 rounded-2xl border border-amber-300/20 bg-amber-500/10 p-4 text-sm text-amber-100";
-                        inlineStatus.innerHTML = '<p class="font-semibold">This email already used its free scan.</p><p class="mt-1">For more domains or a fresh report, email <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
+                        inlineStatus.innerHTML = t("scan.status.alreadyUsed");
                         return;
                     }
                     inlineStatus.className = "mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-500/10 p-4 text-sm text-emerald-100";
-                    inlineStatus.innerHTML = '<p class="font-semibold">Check your inbox to confirm &#9993;</p><p class="mt-1">We just emailed you a confirmation link. Click it to start your free scan &mdash; your report will be sent straight to your inbox.</p>';
+                    inlineStatus.innerHTML = t("scan.status.confirm");
                     form.reset();
                 }).catch(function (err) {
                     resetButton();
                     inlineStatus.className = "mt-5 rounded-2xl border border-amber-300/20 bg-amber-500/10 p-4 text-sm text-amber-100";
                     if (err && err.code === 429) {
-                        inlineStatus.innerHTML = '<p class="font-semibold">Too many requests right now.</p><p class="mt-1">Please try again in a few minutes, or email <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a>.</p>';
+                        inlineStatus.innerHTML = t("scan.status.tooMany");
                     } else {
-                        inlineStatus.innerHTML = '<p class="font-semibold">We could not submit the form automatically.</p><p class="mt-1">Please email your domains to <a class="text-amber-200 underline" href="mailto:contact@secureorbit.cloud">contact@secureorbit.cloud</a> and we&apos;ll follow up.</p>';
+                        inlineStatus.innerHTML = t("scan.status.error");
                     }
                 });
             });
