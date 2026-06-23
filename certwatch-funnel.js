@@ -4,7 +4,7 @@
         contactEmail: runtime.contactEmail || "contact@secureorbit.cloud",
         CERTWATCH_LEAD_FORM_ENDPOINT: runtime.CERTWATCH_LEAD_FORM_ENDPOINT || "https://formsubmit.co/contact@secureorbit.cloud",
         CERTWATCH_INTERNAL_CC_EMAIL: runtime.CERTWATCH_INTERNAL_CC_EMAIL || "",
-        CERTWATCH_CALL_URL: runtime.CERTWATCH_CALL_URL || "https://calendly.com/wislest/30min",
+        CERTWATCH_CALL_URL: runtime.CERTWATCH_CALL_URL || "https://calendly.com/secureorbit/30min",
         CERTWATCH_STARTER_CHECKOUT_URL: runtime.CERTWATCH_STARTER_CHECKOUT_URL || "",
         CERTWATCH_PORTFOLIO_CHECKOUT_URL: runtime.CERTWATCH_PORTFOLIO_CHECKOUT_URL || "",
         CERTWATCH_SAMPLE_REPORT_URL: runtime.CERTWATCH_SAMPLE_REPORT_URL || "",
